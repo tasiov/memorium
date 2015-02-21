@@ -1,13 +1,22 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users do
 
-  get 'memorial/index'
+    # Index stuff for when we make public profiles.
+    # If static across users, remove from loop.
+    #  scope as: 'memorials' do
+    #    get 'memorials' => 'memorials#index'
+    # end
 
-  get 'memorial/new'
+    get 'memorials/new', to: 'memorials#new', as: :new_memorial
 
-  get 'memorial/show'
+    get 'memorials/:id/edit', to: 'memorials#edit', as: :edit_memorial
 
-  get 'memorial/edit'
+    get 'memorials/:id', to: 'memorials#show', as: :memorial
+    patch 'memorials/:id', to: 'memorials#update'
+    put 'memorials/:id', to: 'memorials#update'
+    delete 'memorials/:id', to: 'memorials#destroy'
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

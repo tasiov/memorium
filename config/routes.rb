@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'user/new'
-
-  get 'user/show'
-
-  get 'user/edit'
-
-  get 'user/destroy'
+  resources :users
 
   get 'memorial/index'
 

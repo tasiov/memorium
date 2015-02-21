@@ -1,4 +1,4 @@
-class MemorialController < ApplicationController
+class MemorialsController < ApplicationController
   before_action :set_memorial, only: [:show, :edit, :update, :destroy]
 
   def index

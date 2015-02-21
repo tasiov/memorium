@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/login'
+
+  get 'sessions/logout'
+
   resources :users do
 
     # Index stuff for when we make public profiles.

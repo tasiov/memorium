@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :users do
-
     # Index stuff for when we make public profiles.
     # If static across users, remove from loop.
     #  scope as: 'memorials' do

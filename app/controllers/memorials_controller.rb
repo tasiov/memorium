@@ -41,6 +41,9 @@ class MemorialsController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
    # Use callbacks to share common setup or constraints between actions.
   	def set_memorial
@@ -49,6 +52,6 @@ class MemorialsController < ApplicationController
 
   	# Never trust parameters from the scary internet, only allow the white list through.
   	def memorial_params
-    	params.require(:memorial).permit()
+    	params.require(:memorial).permit(:title, :description, :name, :birth_date, :death_date)
   	end
 end

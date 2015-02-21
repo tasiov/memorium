@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'user/new'
+
+  get 'user/show'
+
+  get 'user/edit'
+
+  get 'user/destroy'
+
   get 'memorial/index'
 
   get 'memorial/new'

@@ -20,7 +20,7 @@ class MemorialsController < ApplicationController
 
   	respond_to do |format|
   		if @product.save
-  			format.html {redirect_to @memorial, notice: 'Product was successfully created.' }
+  			format.html {redirect_to @memorial, notice: 'Memorial was successfully created.' }
         	format.json { render :show, status: :created, location: @memorial }
     	else
         	format.html { render :new }
@@ -32,7 +32,7 @@ class MemorialsController < ApplicationController
   def update
     respond_to do |format|
       if @memorial.update(memorial_params)
-        format.html { redirect_to @memorial, notice: 'Product was successfully updated.' }
+        format.html { redirect_to @memorial, notice: 'Memorial was successfully updated.' }
         format.json { render :show, status: :ok, location: @memorial }
       else
         format.html { render :edit }
@@ -42,6 +42,11 @@ class MemorialsController < ApplicationController
   end
 
   def destroy
+    @memorial.destroy
+    respond_to do |format|
+      format.html { redirect_to memorials_url, notice: "Memorial was successfully destroyed."}
+      format.json { head :no_content }
+    end
   end
 
   private

@@ -96,3 +96,8 @@ a:hover {
 	margin: 10px 10px 10px 80px;
 	float: left;
 }
+
+/*Basic css for any text_field */
+input[type="text"]{
+	opacity: .5;
+}

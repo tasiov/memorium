@@ -1,25 +1,50 @@
-<div class="login">
-	<% if @current_user %>
+<nav> Memorium Logo Here </nav>
 
-		<p>Hey, <%= @current_user.name %>, you're already logged in!</p>
-		<%= link_to "Logout!", logout_path %><br>
-		<%= link_to "Head to the user page!", user_path(@current_user.id) %>		
+<div class="logwrapper">
+	<div class="login">
+		<h2> Log in to Memorium </h2>
+		<% if @current_user %>
+			Hey, <%= @current_user.name %>, you're already logged in!
+			<%= link_to "Logout!", logout_path %><br>
+			<%= link_to "Head to the user page!", user_path(@current_user.id) %>
+		<% else %>
 
-	<% else %>
+			<%= form_tag "/login" do %>
+				
+					<div>Email<br>
+					<%= text_field_tag :email %>
+					</div>
+				</br>
+					<div>Password <br>
+					<%= text_field_tag :password %>
+					</div> 
+				</br>
+				<p class="submitbutton"><%= submit_tag "Log In" %></p>
+			<% end %>
 
-		<%= form_tag "/login" do %>
-			email: <%= text_field_tag :email %>
-			password: <%= text_field_tag :password %>
-			<%= submit_tag "Log In" %>
+		<div class="newuser">
+			New to Memorium? <%= link_to "Sign up now >>", new_user_path %>
+		</div>
+
+		<% if flash[:notice] %>
+			<p><%= flash[:notice] %></p>
 		<% end %>
-
-	<div class="newuser">
-		<%= link_to "New? Sign Up!", new_user_path %>
-	</div>
-
-	<% if flash[:notice] %>
-		<p><%= flash[:notice] %></p>
+	
 	<% end %>
-
-<% end %>
+	</div>
 </div>
+
+<div class="announce">
+
+<h2> Create a Memorial <br>for your loved one today.</h2>
+
+<ul>
+<li> Upload pictures and videos. </li>
+<br>
+<li> Share with family and friends. </li>
+<br>
+<li> Keep your memories alive. </li>
+</ul>
+
+</div>
+

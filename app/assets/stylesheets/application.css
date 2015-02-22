@@ -101,3 +101,8 @@ a:hover {
 input[type="text"]{
 	opacity: .5;
 }
+
+/*More specific, overriding css for edit text_fields*/
+input[type="text"].edit_field{
+	opacity: 1;
+}

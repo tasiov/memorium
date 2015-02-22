@@ -4,14 +4,14 @@
 	<div class="login">
 		<h2> Log in to Memorium </h2>
 		<% if @current_user %>
-			Hey, <%= @current_user.name %>, you're already logged in!
+			Hey, <%= @current_user.first_name %>, you're already logged in!
 			<%= link_to "Head to the user page!", user_path(@current_user.id) %>
 		<% else %>
 
 			<%= form_tag "/login" do %>
 				
 					<div>Email<br>
-					<%= text_field_tag :email, 'email' %>
+					<%= text_field_tag :email, 'email'%>
 					</div>
 				</br>
 					<div>Password <br>

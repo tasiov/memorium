@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#login', as: :login
   post 'login', to: 'sessions#verify'
-  get 'logout', to: 'sessions#logout', as: :logout
+  get 'logout', to: 'sessions#logout', as: :logout  
 
   resources :users do
     # Index stuff for when we make public profiles.

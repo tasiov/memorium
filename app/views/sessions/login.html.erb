@@ -1,7 +1,9 @@
 <div class="login">
 	<% if @current_user %>
 
-		Hey, <%= @current_user.name %>, you're already logged in! <%= link_to "Logout!", logout_path %>
+		<p>Hey, <%= @current_user.name %>, you're already logged in!</p>
+		<%= link_to "Logout!", logout_path %><br>
+		<%= link_to "Head to the user page!", user_path(@current_user.id) %>		
 
 	<% else %>
 

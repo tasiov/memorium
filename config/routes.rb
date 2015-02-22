@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'sessions#login'
+  root 'users#send_user_to_home'
+  # root 'sessions#login'
 
   get 'login', to: 'sessions#login', as: :login
   post 'login', to: 'sessions#verify'

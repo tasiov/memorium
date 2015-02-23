@@ -2,11 +2,18 @@
 <html>
 <head>
   <title>Memorium</title>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:300italic,700italic,400,800,700,600' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<nav> <div class="logo_header">
+<%= link_to(image_tag "logo_WB.png") %>
+</div></nav>
 <body>
+<header>
+
+</header>
 <% if @current_user != nil %>
 	<%= link_to "Logout!", logout_path %><br>
 <% end %>

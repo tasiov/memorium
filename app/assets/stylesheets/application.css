@@ -42,7 +42,7 @@ a:hover {
 .logwrapper {
 	
 	/*border: solid #909090 1px;*/
-	width: 450px;
+	width: 420px;
 	padding: 10px 10px 5px 5px;
 	margin: 10px 50px 10px 10px;
 	float: right;
@@ -96,34 +96,25 @@ a:hover {
 /* area to the left of actual login form in login page */
 .announce {
 	/*border: solid #909090 1px;*/
-	width: 450px;
+	width: 400px;
 	padding: 10px 10px 5px 5px;
 	margin: 10px 10px 10px 80px;
 	float: left;
+	
 }
 
-<<<<<<< HEAD
-/* input tags on login but it's not really working yet */
-.tags {
-	width: 250px;
-	height: 50px;
 
-
-}
-
-input[type=text]{
-	width: 250px;
-	height: 20px;
-	font-size: 15px;
-}
-=======
 /*Basic css for any text_field */
 input[type="text"]{
 	opacity: .5;
+	width: 250px;
+	height: 20px;
+	font-size: 15px;
 }
 
 /*More specific, overriding css for edit text_fields*/
 input[type="text"].edit_field{
 	opacity: 1;
+	
 }
->>>>>>> 792261437ca9fe96360dd2081ca764d51c48d22d
+

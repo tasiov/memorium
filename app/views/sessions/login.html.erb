@@ -1,5 +1,18 @@
 <nav> Memorium Logo Here </nav>
 
+<div class="announce">
+
+	<h2> Create a Memorial <br>for your loved one today.</h2>
+
+		<ul>
+			<li> Upload pictures and videos. </li>
+			<br>
+			<li> Share with family and friends. </li>
+			<br>
+			<li> Keep your memories alive. </li>
+		</ul>
+
+</div>
 <div class="logwrapper">
 	<div class="login">
 		<h2> Log in to Memorium </h2>
@@ -10,22 +23,12 @@
 
 			<%= form_tag "/login" do %>
 				
-<<<<<<< HEAD
 					<div class="tags"><!-- Email --><br>
 					<%= text_field_tag :email , "email" %>
 					</div>
 				</br>
 					<div class="tags"><!-- Password --> <br>
 					<%= text_field_tag :password , "password" %>
-=======
-					<div>Email<br>
-					<%= text_field_tag :email, 'email'%>
-					</div>
-				</br>
-					<div>Password <br>
-					<%= text_field_tag :password, 'password' %>
->>>>>>> 792261437ca9fe96360dd2081ca764d51c48d22d
-					</div> 
 				</br>
 				<p class="submitbutton"><%= submit_tag "Log In" %></p>
 			<% end %>
@@ -42,17 +45,5 @@
 	</div>
 </div>
 
-<div class="announce">
 
-<h2> Create a Memorial <br>for your loved one today.</h2>
-
-<ul>
-<li> Upload pictures and videos. </li>
-<br>
-<li> Share with family and friends. </li>
-<br>
-<li> Keep your memories alive. </li>
-</ul>
-
-</div>
 

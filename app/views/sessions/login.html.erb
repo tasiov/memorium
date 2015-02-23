@@ -11,12 +11,12 @@
 
 			<%= form_tag "/login" do %>
 				
-					<div>Email<br>
-					<%= text_field_tag :email %>
+					<div class="tags"><!-- Email --><br>
+					<%= text_field_tag :email , "email" %>
 					</div>
 				</br>
-					<div>Password <br>
-					<%= text_field_tag :password %>
+					<div class="tags"><!-- Password --> <br>
+					<%= text_field_tag :password , "password" %>
 					</div> 
 				</br>
 				<p class="submitbutton"><%= submit_tag "Log In" %></p>

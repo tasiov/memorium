@@ -16,7 +16,7 @@
   <%= @user.email %>
 </p>
 
+<%= link_to 'Build a memorial page!', user_new_memorial_path(@user.id) %><br>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', @user %>
-
 

@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     #    get 'memorials' => 'memorials#index'
     # end
 
+    get 'memorials', to: 'memorials#index'
+    post 'memorials', to: 'memorials#create'
+
     get 'memorials/new', to: 'memorials#new', as: :new_memorial
 
     get 'memorials/:id/edit', to: 'memorials#edit', as: :edit_memorial

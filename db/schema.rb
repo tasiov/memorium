@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221201429) do
+ActiveRecord::Schema.define(version: 20150222185847) do
 
   create_table "memorial_users", force: :cascade do |t|
     t.integer  "user_id"
@@ -32,11 +32,12 @@ ActiveRecord::Schema.define(version: 20150221201429) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
+    t.string   "first_name"
     t.string   "email"
     t.string   "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "last_name"
   end
 
 end

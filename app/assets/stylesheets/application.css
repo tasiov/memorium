@@ -102,6 +102,7 @@ a:hover {
 	float: left;
 }
 
+<<<<<<< HEAD
 /* input tags on login but it's not really working yet */
 .tags {
 	width: 250px;
@@ -115,3 +116,14 @@ input[type=text]{
 	height: 20px;
 	font-size: 15px;
 }
+=======
+/*Basic css for any text_field */
+input[type="text"]{
+	opacity: .5;
+}
+
+/*More specific, overriding css for edit text_fields*/
+input[type="text"].edit_field{
+	opacity: 1;
+}
+>>>>>>> 792261437ca9fe96360dd2081ca764d51c48d22d

@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
   before_action :get_user
   before_action :redirect_unless_loggedin, except: [:new, :create]
 
+  def send_user_to_home
+    if @current_user != nil
+      redirect_to user_path(@current_user.id)
+    end
+  end
 
   def get_user
   	if session[:user_id]
@@ -14,8 +19,7 @@ class ApplicationController < ActionController::Base
   	end
   end
 
-
   def redirect_unless_loggedin
-      redirect_to root_path unless @current_user
+      redirect_to login_path unless @current_user
   end
 end

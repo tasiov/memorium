@@ -105,7 +105,7 @@ a:hover {
 
 
 /*Basic css for any text_field */
-input[type="text"]{
+input[type="text"], input[type="password"]{
 	opacity: .5;
 	width: 250px;
 	height: 20px;

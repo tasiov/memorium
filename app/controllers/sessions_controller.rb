@@ -1,12 +1,14 @@
 class SessionsController < ApplicationController
 	skip_before_action :redirect_unless_loggedin
 
+	# Redirects user to their show page if they try to retreat back to the login page
 	def login
 		if @current_user != nil
 			redirect_to user_path(@current_user.id)
 		end
 	end
 
+	# Removes user session, and sends them back to the login page
 	def logout
 		session[:user_id] = nil
 		redirect_to :login

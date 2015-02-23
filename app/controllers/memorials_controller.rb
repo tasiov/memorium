@@ -1,7 +1,8 @@
   before_action :set_memorial, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:create, :new, :index]
 
   def index
-  	@memorial = Memorial.all
+  	@memorials = @user.memorials.all
   end
 
   def new
@@ -15,11 +16,12 @@
   end
 
   def create
-  	@memorial = Memorial.new(memorial_params)
+
+    @memorial = @user.memorials.new(memorial_params)
 
   	respond_to do |format|
-  		if @product.save
-  			format.html {redirect_to @memorial, notice: 'Memorial was successfully created.' }
+  		if @user.save
+  			  format.html { redirect_to user_memorial_path(@user.id, @memorial.id), notice: 'Product was successfully created.' }
         	format.json { render :show, status: :created, location: @memorial }
     	else
         	format.html { render :new }
@@ -53,6 +55,10 @@
   	def set_memorial
     	@memorial = Memorial.find(params[:id])
   	end
+
+    def set_user
+      @user = User.find(params[:user_id])
+    end
 
   	# Never trust parameters from the scary internet, only allow the white list through.
   	def memorial_params

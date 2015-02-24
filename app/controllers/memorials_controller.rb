@@ -13,6 +13,10 @@ class MemorialsController < ApplicationController
   def show
   end
 
+  def search
+    @users = User.search params[:search]
+  end
+
   def edit
   end
 

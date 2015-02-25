@@ -1,6 +1,6 @@
 class MemorialsController < ApplicationController 
   before_action :set_memorial, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:create, :new, :index]
+  before_action :set_user, only: [:create, :new, :index, :show]
 
   def index
   	@memorials = @user.memorials.all
@@ -63,6 +63,6 @@ class MemorialsController < ApplicationController
 
   	# Never trust parameters from the scary internet, only allow the white list through.
   	def memorial_params
-    	params.require(:memorial).permit(:title, :description, :name, :birth_date, :death_date)
+    	params.require(:memorial).permit(:title, :name, :description, :birth_date, :death_date)
   	end
 end

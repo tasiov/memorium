@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
 <% if @current_user != nil %>
 	<%= link_to "Logout!", logout_path %>  |  <%= link_to 'User Page', user_path(@user.id) %><br>
 	<%= link_to 'New Memorial', user_new_memorial_path(@user.id) %> | <%= link_to 'Edit User', edit_user_path(@user.id) %>

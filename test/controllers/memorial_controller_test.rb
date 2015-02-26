@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class MemorialControllerTest < ActionController::TestCase
+  setup do
+    @memorial = memorials(:one)
+  end
   test "should get index" do
     get :index
     assert_response :success

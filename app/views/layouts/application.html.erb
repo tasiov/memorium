@@ -14,7 +14,7 @@
 <nav> 
 
 </nav>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
 
 <% if @current_user != nil %>
 	<%= link_to "Logout!", logout_path %>  |  <%= link_to 'User Page', user_path(@user.id) %><br>

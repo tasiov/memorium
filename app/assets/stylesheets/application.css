@@ -179,9 +179,18 @@ input[type="text"].edit_field{
 
 section{
   overflow: hidden;
-  width: 200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 30px;
+  padding: 5px;
   background-color: white;
 
+}
+
+.actions {
+	width: 250px;
+	height: 20px;
+}
+
+.new_memorial_popup {
+	
 }

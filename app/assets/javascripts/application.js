@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
 var ready2 = function(){
 
 	$('body').on('focus', 'input[type="date"]', function(){

@@ -1,8 +1,8 @@
 <h1>Memorial#show</h1>
 
-<%= form_tag :controller => "memorials", :action => "search", :method => "get" do %>
+<%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "get" do %>
 	<section class ="searchbtn">
-		<%= text_field_tag(:search, params[:search]) %>
+		<%= text_field_tag(:search, params[:search], class: "search_bar") %>
 		<%= submit_tag("Search", :name => nil) %>
 	</section>
 <% end %>

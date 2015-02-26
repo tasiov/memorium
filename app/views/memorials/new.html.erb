@@ -1,3 +1,39 @@
 <h1>Memorial#new</h1>
 
-<%= render 'form' %>
+<%= form_for([@user, @memorial], url: {action: "create"}) do |f| %>
+  <% if @memorial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@memorial.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @memorial.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="field">
+		<%= f.label :title %><br>
+  	<%= f.text_field :title, value: 'Title' %>
+	</div>
+	<div class="field">
+ 		<%= f.label :description %><br>
+ 		<%= f.text_field :description, value: 'Description' %>
+	</div>
+	<div class="field">
+ 		<%= f.label :name %><br>
+ 		<%= f.text_field :name, value: 'Name' %>
+	</div>
+	<div class="field">
+ 		<%= f.label :birth_date %><br>
+ 		<%= f.date_field :birth_date %>
+	</div>
+	<div class="field">
+ 		<%= f.label :death_date %><br>
+ 		<%= f.date_field :death_date %>
+	</div>
+	<div class="actions">
+	  <%= f.submit %>
+	</div>
+<% end %>

@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div class="user_info">
+<div class="user_profile_pic">
+<%= link_to (image_tag "user_silhouette.png") %>
+</div>
+
 <p>
   <strong>First name:</strong>
   <%= @user.first_name %>
@@ -14,6 +19,45 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+<br>
+</div>
+
+<div class="memorial_section">
+<p> View Memorials you we're invited to. </p>
+	<div class="build_memorial_button">
+	<!-- link_to 'View Memorials here' -->
+	Enter <!-- placeholder until link above works -->
+	</div>
+
+<section>
+	<% @user.memorials.each do |memorial| %>
+	  <div>
+	  <%= memorial.title %>
+		  <br>
+		  <%= memorial.description %>
+		  </br>
+		  <br>
+		
+	  </div>
+  	<% end %>
+</section>
+
+
+
+<br>
+
+
+
+
+
+<div class="memorial_create">
+<p> Create your Memorial here. </p>
+	<div class="build_memorial_button"
+	<%= link_to 'Build memorial now', user_new_memorial_path(@user.id) %>
+	</div>
+<br>
+</div>
+
 
 <section class = "new_memorial_popup">
 <%= form_for([@user, @memorial]) do |f| %>
@@ -54,4 +98,3 @@
 <%= link_to 'Build a memorial page!', user_new_memorial_path(@user.id) %><br>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', @user %>
-

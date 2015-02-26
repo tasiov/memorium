@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222185847) do
+ActiveRecord::Schema.define(version: 20150225003240) do
 
   create_table "memorial_users", force: :cascade do |t|
     t.integer  "user_id"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20150222185847) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.date     "birth_date"
+    t.date     "death_date"
   end
 
   create_table "users", force: :cascade do |t|

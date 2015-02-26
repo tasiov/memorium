@@ -1,4 +1,15 @@
 <h1>Memorial#show</h1>
-<p>Find me in app/views/memorial/show.html.erb</p>
 
+<%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "get" do %>
+	<section class ="searchbtn">
+		<%= text_field_tag(:search, params[:search], class: "search_bar") %>
+		<%= submit_tag("Search", :name => nil) %>
+	</section>
+<% end %>
+
+<% @users.each do |user| %>
+  <tr class= "user" product="<%= user.id %>">
+    <td><%= user.first_name %></td>
+  </tr>
+<% end %>
 

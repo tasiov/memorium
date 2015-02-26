@@ -58,5 +58,43 @@
 <br>
 </div>
 
+
+<section class = "new_memorial_popup">
+<%= form_for([@user, @memorial]) do |f| %>
+  <div class="field">
+     <%= f.label :title %><br>
+     <%= f.text_field :title, value: 'Title'%>
+    </div>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, value: 'Name' %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_field :description, value: 'Description' %>
+    </div>
+    <div class="field">
+     <%= f.label :birth_date %><br>
+     <%= f.date_field :birth_date %>
+    </div>
+    <div class="field">
+      <%= f.label :death_date %><br>
+      <%= f.date_field :death_date %>
+    </div>
+    <div class="actions">
+     <%= f.submit %>
+    </div>
+<% end %>
+</section>
+
+
+
+
+
+
+
+
+
+<%= link_to 'Build a memorial page!', user_new_memorial_path(@user.id) %><br>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', @user %>

@@ -9,6 +9,7 @@ $(function() {
 
 	var input = $('#search').val();
 	var userJson = JSON.parse(getRequest["responseText"]);
+	console.log(userJson);
 	var userNames = [];
 	for (var i in userJson) {
 		var name = userJson[i].first_name + " " + userJson[i].last_name;

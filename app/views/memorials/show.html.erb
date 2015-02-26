@@ -4,12 +4,30 @@
 	<section class ="searchbtn">
 		<%= text_field_tag(:search, params[:search], class: "search_bar") %>
 		<%= submit_tag("Search", :name => nil) %>
-	</section>
+	</section>	
 <% end %>
 
-<% @users.each do |user| %>
-  <tr class= "user" product="<%= user.id %>">
-    <td><%= user.first_name %></td>
-  </tr>
-<% end %>
+<%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "post", :id => "comment_form" do %>
+	<%= text_field_tag(:
 
+<ul>
+	<% @memorial.comments.each do |comment| %>
+  		<li>
+  			<div>
+  				<span><%= comment.user.first_name %></span>: 
+  				<%= comment.message %>
+  			</div>
+  		</li>
+  	<% end %>
+ </ul>
+
+
+<table>
+	<tbody>
+		<% @users.each do |user| %>
+		  <tr class= "user" product="<%= user.id %>">
+		    <td><%= user.first_name %></td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>

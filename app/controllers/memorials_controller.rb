@@ -11,7 +11,7 @@ class MemorialsController < ApplicationController
   end
 
   def show
-    @users = User.search params[:search] 
+    @users = User.search params[:search]
   end
 
   def edit

@@ -7,13 +7,15 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<nav> <div class="logo_header">
-<%= link_to(image_tag "logo_WB.png") %>
-</div></nav>
-<body>
 <header>
-
+<h1>Memorium<h1>
+	
 </header>
+<nav> 
+
+</nav>
+<body>
+
 <% if @current_user != nil %>
 	<%= link_to "Logout!", logout_path %><br>
 <% end %>

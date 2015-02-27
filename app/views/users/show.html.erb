@@ -24,41 +24,49 @@
 
 <br>
 
+<button class="popup_button">Memorial</button>
+
+
+
+
+<!-- The popup for creating a new memorial. -->
 <section class = "new_memorial_popup">
 <%= form_for([@user, @memorial]) do |f| %>
-  <div class="field">
+  <fieldset class="memorial_info left_field">
+  <div class="left_div">
      <%= f.label :title %><br>
      <%= f.text_field :title, value: 'Memorial Title'%>
     </div>
-    <div class="field">
+    <div class="left_div">
       <%= f.label :name %><br>
       <%= f.text_field :name, value: 'Name' %>
     </div>
-    <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_field :description, value: 'Description' %>
-    </div>
-    <div class="field">
+  </fieldset>
+
+  <fieldset class="memorial_info middle_field">
+       <div class="middle_div">
      <%= f.label :birth_date %><br>
      <%= f.date_field :birth_date %>
     </div>
-    <div class="field">
+    <div class="middle_div">
       <%= f.label :death_date %><br>
       <%= f.date_field :death_date %>
     </div>
-    <div class="actions">
-     <%= f.submit %>
+  </fieldset>
+
+  <fieldset class="memorial_info right_field">
+   <%= f.text_area :description, value: 'Description', class: 'text_area_description'  %>
+  </fieldset>
+
+  <fieldset class="memorial_info bottom_field">
+    <div class="bottom_div">
+     <%= f.submit class: "new_memorial_button" %>
     </div>
+  </fieldset>
 <% end %>
 </section>
 
 
-<!-- <div class="memorial_section">
-<p> View Memorials you we're invited to. </p>
-  <div class="build_memorial_button">
-   link_to 'View Memorials here'
-  Enter placeholder until link above works 
-  </div> -->
 <br>
 <section>
 Memorials to view go here.

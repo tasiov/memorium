@@ -8,21 +8,24 @@
 <% end %>
 
 <%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "post", :id => "comment_form" do %>
-	<%= text_field_tag(:enter_comment, params[:enter_comment], class: "comment_bar") %>
+	<%= text_field_tag(:enter_comment, params[:enter_comment], id: "comment_bar") %>
 	<%= submit_tag("Enter", :id => "submit_comment") %>
 <% end %>
 <div id="get_data" style="display: none;" user-id="<%= @current_user.id %>" memorial-id="<%= @memorial.id %>"><%= @current_user.first_name %></div>
 
-<ul class= "comment-list">
+<div id= "comment-list">
 	<% @memorial.comments.each do |comment| %>
-  		<li>
-  			<div>
-  				<span><%= comment.user.first_name %></span>: 
-  				<%= comment.message %>
-  			</div>
-  		</li>
+		<div>
+			<span class='user_name'><%= comment.user.first_name %></span>   
+			<%= comment.message %><br>
+			<% if comment.created_at > (Time.new - 86400000) %>
+				<span class='comment_time'><%= time_ago_in_words(comment.created_at) %> ago</span>
+			<% else %>
+				<span class='comment_time'><%= comment.created_at.strftime("%B %d at %I:%M%p") %></span>
+			<% end %>
+		</div>
   	<% end %>
- </ul>
+ </div>
 
 
 <table>

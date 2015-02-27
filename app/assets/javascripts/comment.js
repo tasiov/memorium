@@ -6,7 +6,7 @@ var memorial_ready = function() {
  		var userName = dataTag.text(),
  		    userId = dataTag.attr('user-id'),
  		    memorialId = dataTag.attr('memorial-id');
- 		var message = $('.comment_bar').val();
+ 		var message = $('#comment_bar').val();
 
  		var postData = { comment: 
  			{ user_id: userId, 
@@ -21,12 +21,13 @@ var memorial_ready = function() {
 			type: 'POST',
 			async: false,
 			success: function() {
-				var temp_tag = "<li><div><span>" + userName +
- 				       "</span>: " + message + "</div></li>";
- 				$('.comment-list').append(temp_tag);
+				var temp_tag = "<div><span class='user_name'>" + userName +
+ 				    "</span>: " + message +
+ 				    "<br><span class='comment_time'>1 second ago</span></div>";
+ 				$('#comment-list').append(temp_tag);
 			}
 		});
- 	});
+ 	});s
 };
 
 $(".memorials.show").ready(memorial_ready);

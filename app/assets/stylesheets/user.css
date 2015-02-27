@@ -50,3 +50,90 @@
   opacity: 1;
 
 }
+
+.memorial_info{
+  display: inline;
+  height: 40px;
+  width: 900px;
+  border: 0px;
+}
+
+.new_memorial_popup{
+  position: absolute;
+  margin: 0px auto;
+  z-index: 1;
+  bottom: 0%;
+  left: 0px;
+  right: 0px;
+  border: solid black 5px;
+  background-color: rgba(150,150,150,1);
+  width: 80%;
+  display: none;
+}
+
+.popup_button{
+  height: 25px;
+  width: 100px;
+
+}
+
+form#new_memorial{
+}
+
+.left_div{
+  display: inline-block;
+}
+
+.left_field{
+  margin-top: 10px;
+  margin-bottom: 7px;
+  width: 20%;
+}
+
+.middle_div{
+  display: inline-block;
+}
+
+.middle_field{
+  margin-top: 7px;
+  margin-bottom: 14px;
+  width: 20%;
+}
+
+.right_field{
+  width: 40%;
+  margin: 0px 0px 0px 0px;
+  position: static;
+  top: -24px;
+}
+
+.text_area_description{
+  width: 100%;
+  height: 100px;
+  top: 20px;
+  position: relative;
+  resize: none;
+}
+
+.bottom_field{
+  height: 30px;
+  margin-top: 30px;
+  width: 97%;
+  text-align: center;
+}
+
+#new_memorial input{
+  text-align: center;
+}
+
+#new_memorial input[type="date"]{
+  text-indent: 20px;
+}
+
+
+.popup_alert{
+  position: relative;
+  bottom: 16px;
+  height: 0px;
+  text-align: center;
+}

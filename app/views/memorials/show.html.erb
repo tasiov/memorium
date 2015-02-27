@@ -8,9 +8,12 @@
 <% end %>
 
 <%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "post", :id => "comment_form" do %>
-	<%= text_field_tag(:
+	<%= text_field_tag(:enter_comment, params[:enter_comment], class: "comment_bar") %>
+	<%= submit_tag("Enter", :id => "submit_comment") %>
+<% end %>
+<div id="get_data" style="display: none;" user-id="<%= @current_user.id %>" memorial-id="<%= @memorial.id %>"><%= @current_user.first_name %></div>
 
-<ul>
+<ul class= "comment-list">
 	<% @memorial.comments.each do |comment| %>
   		<li>
   			<div>

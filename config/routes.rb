@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post 'comments/new'
+
   root 'users#send_user_to_home'
   # root 'sessions#login'
 

@@ -1,6 +1,6 @@
-class MemorialsController < ApplicationController 
+class MemorialsController < ApplicationController
   before_action :set_memorial, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:create, :new, :index, :show]
+  before_action :set_user, only: [:create, :new, :index, :show, :timeline]
 
   def index
   	@memorials = @user.memorials.all
@@ -12,6 +12,10 @@ class MemorialsController < ApplicationController
 
   def show
     @users = User.search params[:search]
+  end
+
+  def timeline
+
   end
 
   def edit

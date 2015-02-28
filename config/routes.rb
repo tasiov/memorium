@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
+  post 'comments/new'
+
   root 'users#send_user_to_home'
   # root 'sessions#login'
 
   get 'login', to: 'sessions#login', as: :login
   post 'login', to: 'sessions#verify'
-  get 'logout', to: 'sessions#logout', as: :logout  
+  get 'logout', to: 'sessions#logout', as: :logout
 
   resources :users do
     # Index stuff for when we make public profiles.
@@ -25,6 +27,8 @@ Rails.application.routes.draw do
     patch 'memorials/:id', to: 'memorials#update'
     put 'memorials/:id', to: 'memorials#update'
     delete 'memorials/:id', to: 'memorials#destroy'
+
+    get 'memorials/:id/timeline', to: 'memorials#timeline', as: :memorial_timeline
   end
 
 

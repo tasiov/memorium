@@ -66,6 +66,11 @@
 <% end %>
 </section>
 
+<br>
+<% @user.memorials.each do |memorial| %>
+  <%= link_to "#{memorial.title}", user_memorial_path(@user.id, memorial.id) %>
+  <br>
+<% end %>
 
 <br>
 <section>

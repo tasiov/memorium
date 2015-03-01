@@ -39,3 +39,4 @@ var memorial_ready = function() {
 };
 
 $(".memorials.show").ready(memorial_ready);
+$(".memorials.show").on('page:load', memorial_ready);

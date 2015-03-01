@@ -2,11 +2,16 @@ var memorial_ready = function() {
 
  	$('#comment_form').submit(function( event ) {
  		event.preventDefault();
+ 		var message = $('#comment_bar').val();
+
+ 		if (message === "") {
+ 			return;
+ 		}
+
  		var dataTag = $('#get_data');
  		var userName = dataTag.text(),
  		    userId = dataTag.attr('user-id'),
  		    memorialId = dataTag.attr('memorial-id');
- 		var message = $('#comment_bar').val();
 
  		var postData = { comment: 
  			{ user_id: userId, 
@@ -27,7 +32,9 @@ var memorial_ready = function() {
  				$('#comment-list').append(temp_tag);
 			}
 		});
- 	});s
+
+		$('#comment_bar').val("");
+ 	});
 };
 
 $(".memorials.show").ready(memorial_ready);

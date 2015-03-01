@@ -101,12 +101,10 @@ a:hover {
 	
 	/*border: solid #909090 1px;*/
 	width: 420px;
-	padding: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 35px;
 	margin: 10px 50px 10px 0px;
 	float: right;
 	background-color: #E6E6E6;
-
-
 
 }
 
@@ -161,7 +159,7 @@ a:hover {
 	padding: 10px 10px 5px 35px;
 	margin: 10px 10px 10px 80px;
 	float: left;
-	background-color: black;
+	background-color: #E6E6E6;
 	opacity: 1;
 	
 }

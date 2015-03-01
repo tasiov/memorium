@@ -4,7 +4,7 @@
 	<section class ="searchbtn">
 		<%= text_field_tag(:search, params[:search], class: "search_bar") %>
 		<%= submit_tag("Search", :name => nil) %>
-	</section>	
+	</section>
 <% end %>
 
 <%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "post", :id => "comment_form" do %>
@@ -16,7 +16,10 @@
 <div id= "comment-list">
 	<% @memorial.comments.each do |comment| %>
 		<div>
+
 			<span class='user_name'><%= comment.user.first_name %>: </span>   
+
+			
 			<%= comment.message %><br>
 			<% if comment.created_at > (Time.new - 86400000) %>
 				<span class='comment_time'><%= time_ago_in_words(comment.created_at) %> ago</span>
@@ -26,3 +29,8 @@
 		</div>
   	<% end %>
  </div>
+
+
+<%= link_to "Go To Timeline", user_memorial_timeline_path %>
+
+

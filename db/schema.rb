@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226201357) do
+ActiveRecord::Schema.define(version: 20150228234955) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "message"
@@ -44,6 +44,19 @@ ActiveRecord::Schema.define(version: 20150226201357) do
     t.date     "birth_date"
     t.date     "death_date"
   end
+
+  create_table "pictures", force: :cascade do |t|
+    t.date     "date"
+    t.string   "path"
+    t.string   "caption"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "page"
+    t.integer  "memorial_id"
+  end
+
+  add_index "pictures", ["memorial_id"], name: "index_pictures_on_memorial_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

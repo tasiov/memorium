@@ -25,6 +25,7 @@ class MemorialsController < ApplicationController
     respond_to do |format|
       if @memorial.save
         format.html { redirect_to user_memorial_timeline_path(@user.id, @memorial.id), notice: 'Product was successfully created.' }
+        Picture.sort
       else
         format.html { render :timeline }
       end

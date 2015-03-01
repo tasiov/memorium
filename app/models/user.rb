@@ -9,11 +9,11 @@ class User < ActiveRecord::Base
 	validates :password, presence: true, length: { in: 6..20 }
 
 	def self.search(search)
-	  if search 
+	  if search
 		  search_condition = "%" + search + "%"
 	      where('first_name LIKE ?', search_condition)
-	  else 
+	  else
 	  	  []
 	  end
-    end
+  end
 end

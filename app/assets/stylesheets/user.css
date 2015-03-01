@@ -11,7 +11,7 @@
 
 	width: 150px;
 	height: 20px;
-	background-color: #425068;
+	background-color: #0071BC;
 	color: white;
   padding: 5px 15px;
 }
@@ -34,7 +34,7 @@
   width: 80%;
   height: 100%;
   display: block;
-  margin: 20px 20px 20px 20px;
+  margin: 20px 20px 0px 20px;
   padding: 10px;
   opacity: 1;
 
@@ -45,7 +45,7 @@
   width: 80%;
   height: 100%;
   display: block;
-  margin: 10px 20px 20px 20px;
+  margin: 0px 20px 20px 20px;
   padding: 10px;
   opacity: 1;
 
@@ -78,7 +78,7 @@
   left: 0px;
   right: 0px;
   /*border: solid black 5px;*/
-  background-color: #D7D5C0;
+  background-color: #F0F0F0;
   width: 100%;
   display: none;
   box-shadow: 0 0 10px .5px;
@@ -91,14 +91,14 @@
   color: white;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
-  background: #B53A47;
+  background: #0071BC;
   border: none;
   float: right;
 
 }
 
 .popup_button:hover {
-  background: #42598C;
+  background: #0071BC;
 }
 
 form#new_memorial{
@@ -155,6 +155,9 @@ form#new_memorial{
   text-indent: 20px;
 }
 
+.new_memorial_button {
+  background: #0071BC;
+}
 
 .popup_alert{
   position: relative;
@@ -181,11 +184,13 @@ section div#box{
   float:left;
   margin: 10px;
   transition: 1s all;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
 }
 
 section div#box:hover{
 
-  background-color: gray;
+  background-color: #F0F0F0;
   margin-top: -5px;
 }
 
@@ -195,7 +200,7 @@ section div#box:hover{
   color: white;
   font-family: 'Open Sans', sans-serif;
   font-size: 10px;
-  background: #B53A47;
+  background: #0071BC;
   border: none;
   text-decoration: none;
   display: block;

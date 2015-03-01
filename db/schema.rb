@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228234955) do
+ActiveRecord::Schema.define(version: 20150301175631) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "message"
@@ -44,6 +44,19 @@ ActiveRecord::Schema.define(version: 20150228234955) do
     t.date     "birth_date"
     t.date     "death_date"
   end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.text     "message"
+    t.string   "type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "status"
+  end
+
+  add_index "notifications", ["recipient_id"], name: "index_notifications_on_recipient_id"
+  add_index "notifications", ["sender_id"], name: "index_notifications_on_sender_id"
 
   create_table "pictures", force: :cascade do |t|
     t.date     "date"

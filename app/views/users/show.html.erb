@@ -66,6 +66,12 @@
 <% end %>
 </section>
 
+<br>
+<!-- Lists the memorials that a user created (add memorials they can view and contribute to?) -->
+<% @user.memorials.each do |memorial| %>
+  <%= link_to "#{memorial.title}", user_memorial_path(@user.id, memorial.id) %>
+  <br>
+<% end %>
 
 <br>
 <section>

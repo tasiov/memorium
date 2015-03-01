@@ -30,7 +30,7 @@
 }
 
 .user_info {
-  background-color: white;
+  background-color: #F0F0F0;
   width: 80%;
   height: 100%;
   display: block;
@@ -39,6 +39,18 @@
   opacity: 1;
 
 }
+
+.memorial_instructions {
+  
+  width: 80%;
+  height: 100%;
+  display: block;
+  margin: 10px 20px 20px 20px;
+  padding: 10px;
+  opacity: 1;
+
+}
+
 
 .memorial_section {
   background-color: white;
@@ -65,20 +77,28 @@
   bottom: 0%;
   left: 0px;
   right: 0px;
-  border: solid black 5px;
-  background-color: rgba(150,150,150,1);
-  width: 80%;
+  /*border: solid black 5px;*/
+  background-color: #D7D5C0;
+  width: 100%;
   display: none;
+  box-shadow: 0 0 10px .5px;
+
 }
 
 .popup_button{
   height: 50px;
-  width: 150px;
+  width: 250px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  background: #B53A47;
+  border: none;
+  float: right;
 
 }
 
 .popup_button:hover {
-  background: red;
+  background: #42598C;
 }
 
 form#new_memorial{
@@ -128,6 +148,7 @@ form#new_memorial{
 
 #new_memorial input{
   text-align: center;
+  background-color: white;
 }
 
 #new_memorial input[type="date"]{
@@ -164,6 +185,30 @@ section div#box{
 
 section div#box:hover{
 
-  background-color: blue;
-  margin-top: -10px;
+  background-color: gray;
+  margin-top: -5px;
+}
+
+.button {
+  height: 30px;
+  width: 100px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  background: #B53A47;
+  border: none;
+  text-decoration: none;
+  display: block;
+  padding: 5px;
+  margin-left: 20px;
+}
+
+.memorials_invited {
+
+  width: 80%;
+  height: 100%;
+  display: block;
+  margin: 10px 20px 20px 20px;
+  padding: 10px;
+  opacity: 1;
 }

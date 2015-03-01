@@ -17,22 +17,22 @@
 /* Universal navigation bar .. for now */ 
 
 
-/*nav {
+nav {
 	width: 100%;
-	height: 200px;
-	background: #1A3366;
+	height: 50px;
+	background: black;
 	color: white;
-	padding: 20px 0px 0px 0px;
-	background: radial-gradient(circle farthest-side at 80% 50%, #B2D1F0 0px, #1A3366 100%);
-	position: relative;
-	margin: 0 auto;
+	padding: 10px 10px 10px 20px;
+	margin: 0px;
 	display: block;
 
+}
 
-	
-}*/
+p#logout_link {
+	color: white;
+}
 
-header {
+/*header {
 	width: 100%;
 	height: 100px;
 	color: white;
@@ -46,7 +46,7 @@ header {
 	opacity: .1px;
 
 
-}
+}*/
 
 header ul li {
 	list-style: none;
@@ -83,6 +83,7 @@ h3 {
 /* All body info not much yet */
 body {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	margin: 0px;
 
 }
 
@@ -157,10 +158,11 @@ a:hover {
 .announce {
 	/*border: solid #909090 1px;*/
 	width: 420px;
-	padding: 10px 10px 5px 5px;
+	padding: 10px 10px 5px 35px;
 	margin: 10px 10px 10px 80px;
 	float: left;
-	background-color: #E6E6E6;
+	background-color: black;
+	opacity: 1;
 	
 }
 
@@ -179,8 +181,7 @@ input[type="text"], input[type="password"], input[type="date"], textarea{
 
 /*More specific, overriding css for edit text_fields*/
 input[type="text"].edit_field{
-	opacity: 1;
-	
+	opacity: .5;	
 }
 
 section{
@@ -196,3 +197,4 @@ section{
 	width: 250px;
 	height: 20px;
 }
+

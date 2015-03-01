@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <div class="user_info">
-<div class="user_profile_pic">
-<%= link_to (image_tag "user_silhouette.png") %>
-</div>
+  <div class="user_profile_pic">
+  <%= link_to (image_tag "user_silhouette.png") %>
+  </div>
 
 <p>
   <strong>First name:</strong>
@@ -19,17 +19,22 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
-<br>
+<!-- <div ><%= link_to 'Edit User', edit_user_path(@user.id) %></div>
+</div> -->
+
+<%= button_to "Edit User", edit_user_path(@user.id), :class => "button", :method => :get  %><br />
+
 </div>
-
 <br>
 
-<div class="memorial_intructions">
-<h3> Create a Memorial in a few easy steps. </h3>
-<div id="instruct">Click the button and fill out some basic information. 
-Start uploading photos and inviting friends and family to view or collaborate.</div>
+<div class="memorial_instructions">
+  <h3> Create a Memorial in a few easy steps. </h3>
+  <div id="instruct">
+  Click the button and fill out some basic information. 
+  Start uploading photos and inviting friends and family to view or collaborate.
+  </div>
 
-<button class="popup_button">Create Memorial</button>
+  <button class="popup_button">Create Memorial</button>
 
 </div>
 
@@ -73,13 +78,13 @@ Start uploading photos and inviting friends and family to view or collaborate.</
 
 
 <br>
-<section>
-<h3> Memorials you've been invited to view </h3>
+<section class="memorials_invited">
+  <h3> Memorials you've been invited to view </h3>
 
-<section>
-<div id="box">JFK Memorial</div>
-<div id="box">Nana's Memorial</div>
-<div id="box">Memorial for Rex</div>
-<div id="box">Our 1st Grade Teacher</div>
-</section>
+  <section>
+  <div id="box">JFK Memorial</div>
+  <div id="box">Nana's Memorial</div>
+  <div id="box">Memorial for Rex</div>
+  <div id="box">Our 1st Grade Teacher</div>
+  </section>
 </section>

@@ -39,6 +39,7 @@
 
 <% @pictures.each do |picture| %>
 	<tr>
-		<td class='image'><%= image_tag picture.path %></td>
+		<%= image_tag picture.path %>
+		<!-- <td class='image'><%= image_tag picture.path %></td> -->
 	</tr>
 <% end %>

@@ -16,10 +16,10 @@ class PathUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  # For working on heroku, temporarily
- def cache_dir
-   "#{Rails.root}/tmp/uploads"
- end
+ #  # For working on heroku, temporarily
+ # def cache_dir
+ #   "#{Rails.root}/tmp/uploads"
+ # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

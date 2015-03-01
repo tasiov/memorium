@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     delete 'memorials/:id', to: 'memorials#destroy'
 
     get 'memorials/:id/timeline', to: 'memorials#timeline', as: :memorial_timeline
+    post 'memorials/:id/timeline', to: 'memorials#picturecreate', as: :memorial_picture_create
   end
 
 

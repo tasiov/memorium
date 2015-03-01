@@ -1,6 +1,6 @@
 class MemorialsController < ApplicationController
-  before_action :set_memorial, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:create, :new, :index, :show, :timeline]
+  before_action :set_memorial, only: [:show, :edit, :update, :destroy, :timeline, :picturecreate]
+  before_action :set_user, only: [:create, :new, :index, :show, :timeline, :picturecreate]
 
   def index
   	@memorials = @user.memorials.all
@@ -15,7 +15,20 @@ class MemorialsController < ApplicationController
   end
 
   def timeline
+    @pictures = @memorial.pictures.all
+    @picture = Picture.new
+  end
 
+  def picturecreate
+    @picture = @memorial.pictures.new(picture_params)
+
+    respond_to do |format|
+      if @memorial.save
+        format.html { redirect_to user_memorial_timeline_path(@user.id, @memorial.id), notice: 'Product was successfully created.' }
+      else
+        format.html { render :timeline }
+      end
+    end
   end
 
   def edit
@@ -70,4 +83,8 @@ class MemorialsController < ApplicationController
   	def memorial_params
     	params.require(:memorial).permit(:title, :name, :description, :birth_date, :death_date)
   	end
+
+    def picture_params
+      params.require(:picture).permit(:date, :path, :caption, :description, :page)
+    end
 end

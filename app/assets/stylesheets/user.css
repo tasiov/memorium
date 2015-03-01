@@ -71,17 +71,17 @@
 }
 
 .new_memorial_popup{
-  position: absolute;
+  position: fixed;
   margin: 0px auto;
   z-index: 1;
-  bottom: 0%;
+  bottom: 0;
   left: 0px;
   right: 0px;
-  /*border: solid black 5px;*/
   background-color: #F0F0F0;
   width: 100%;
   display: none;
   box-shadow: 0 0 10px .5px;
+
 
 }
 
@@ -102,6 +102,7 @@
 }
 
 form#new_memorial{
+
 }
 
 .left_div{
@@ -148,7 +149,7 @@ form#new_memorial{
 
 #new_memorial input{
   text-align: center;
-  background-color: white;
+
 }
 
 #new_memorial input[type="date"]{
@@ -157,6 +158,8 @@ form#new_memorial{
 
 .new_memorial_button {
   background: #0071BC;
+  color: white;
+  border: none;
 }
 
 .popup_alert{
@@ -208,12 +211,17 @@ section div#box:hover{
   margin-left: 20px;
 }
 
+
+
 .memorials_invited {
 
   width: 80%;
   height: 100%;
-  display: block;
+  /*display: block;*/
   margin: 10px 20px 20px 20px;
   padding: 10px;
   opacity: 1;
+  position: relative;
 }
+
+

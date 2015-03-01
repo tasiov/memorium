@@ -22,15 +22,25 @@ nav {
 	height: 50px;
 	background: black;
 	color: white;
-	padding: 10px 10px 10px 20px;
+	padding: 40px 10px 10px 20px;
 	margin: 0px;
-	display: block;
 	opacity: .3;
+	font-size: 20px;
+
+}
+
+.nav_logout {
+	position: absolute;
+	font-size: 14px;
+	right: 80px;
+	color: white;
+	text-decoration: none;
 
 }
 
 p#logout_link {
 	color: white;
+	float: right;
 }
 
 /*.tagline {

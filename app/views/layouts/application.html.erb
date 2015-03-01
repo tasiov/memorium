@@ -9,20 +9,15 @@
 </head>
 
 <nav> 
-<h1> Memorium </h1>
-
-
+Memorium
+	<div class="nav_logout"><% if @current_user != nil %>
+		<%= link_to "Logout", logout_path %> 
+	<% end %>
+	</div>
 </nav>
 
 <body class="<%= controller_name %> <%= action_name %>">
 
-<% if @current_user != nil %>
-	<%= link_to "Logout!", logout_path %> 
-	<!--<%= link_to 'User Page', user_path(@user.id) %> 
-	<br>
-	<%= link_to 'New Memorial', user_new_memorial_path(@user.id) %> | <%= link_to 'Edit User', edit_user_path(@user.id) %> !-->
-<br>
-<% end %>
 
 <%= yield %>
 

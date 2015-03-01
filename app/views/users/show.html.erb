@@ -22,7 +22,7 @@
 <!-- <div ><%= link_to 'Edit User', edit_user_path(@user.id) %></div>
 </div> -->
 
-<%= button_to "Edit User", edit_user_path(@user.id), :class => "button", :method => :get  %><br />
+<%= button_to "Edit Profile", edit_user_path(@user.id), :class => "button", :method => :get  %><br />
 
 </div>
 <br>
@@ -38,53 +38,53 @@
 
 </div>
 
+    <!-- The popup for creating a new memorial. -->
+    <section class = "new_memorial_popup">
+    <%= form_for([@user, @memorial]) do |f| %>
+      <fieldset class="memorial_info left_field">
+      <div class="left_div">
+         <%= f.label :title %><br>
+         <%= f.text_field :title, value: 'Memorial Title'%>
+        </div>
+        <div class="left_div">
+          <%= f.label :name %><br>
+          <%= f.text_field :name, value: 'Name' %>
+        </div>
+      </fieldset>
 
-<!-- The popup for creating a new memorial. -->
-<section class = "new_memorial_popup">
-<%= form_for([@user, @memorial]) do |f| %>
-  <fieldset class="memorial_info left_field">
-  <div class="left_div">
-     <%= f.label :title %><br>
-     <%= f.text_field :title, value: 'Memorial Title'%>
-    </div>
-    <div class="left_div">
-      <%= f.label :name %><br>
-      <%= f.text_field :name, value: 'Name' %>
-    </div>
-  </fieldset>
+      <fieldset class="memorial_info middle_field">
+           <div class="middle_div">
+         <%= f.label :birth_date %><br>
+         <%= f.date_field :birth_date %>
+        </div>
+        <div class="middle_div">
+          <%= f.label :death_date %><br>
+          <%= f.date_field :death_date %>
+        </div>
+      </fieldset>
 
-  <fieldset class="memorial_info middle_field">
-       <div class="middle_div">
-     <%= f.label :birth_date %><br>
-     <%= f.date_field :birth_date %>
-    </div>
-    <div class="middle_div">
-      <%= f.label :death_date %><br>
-      <%= f.date_field :death_date %>
-    </div>
-  </fieldset>
+      <fieldset class="memorial_info right_field">
+       <%= f.text_area :description, value: 'Description', class: 'text_area_description'  %>
+      </fieldset>
 
-  <fieldset class="memorial_info right_field">
-   <%= f.text_area :description, value: 'Description', class: 'text_area_description'  %>
-  </fieldset>
-
-  <fieldset class="memorial_info bottom_field">
-    <div class="bottom_div">
-     <%= f.submit class: "new_memorial_button" %>
-    </div>
-  </fieldset>
-<% end %>
-</section>
+      <fieldset class="memorial_info bottom_field">
+        <div class="bottom_div">
+         <%= f.submit class: "new_memorial_button" %>
+        </div>
+      </fieldset>
+    <% end %>
+    </section>
 
 
-<br>
-<section class="memorials_invited">
-  <h3> Memorials you've been invited to view </h3>
+    <br>
+    <section class="memorials_invited">
+      <h3> Memorials you've been invited to view </h3>
 
-  <section>
-  <div id="box">JFK Memorial</div>
-  <div id="box">Nana's Memorial</div>
-  <div id="box">Memorial for Rex</div>
-  <div id="box">Our 1st Grade Teacher</div>
-  </section>
-</section>
+      <section>
+      <div id="box">JFK Memorial</div>
+      <div id="box">Nana's Memorial</div>
+      <div id="box">Memorial for Rex</div>
+      <div id="box">Our 1st Grade Teacher</div>
+      </section>
+    </section>
+

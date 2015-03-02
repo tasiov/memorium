@@ -2,8 +2,16 @@
 
 <%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "get" do %>
 	<section class ="searchbtn">
-		<%= text_field_tag(:search, params[:search], class: "search_bar") %>
-		<%= submit_tag("Search", :name => nil) %>
+		<%= text_field_tag(:search, params[:search], class: "search_bar", autocomplete: "off") %>
+		<%= submit_tag("Search", :name => nil) %><br>
+		<ul id="search-dropdown">
+		<!-- 	<li class="drop-names"></li>  -->
+		</ul>
+		<div class="invites">
+		<!-- 	<span class="invite-buttons"></span>'  -->
+		<!-- <button id="cancel-invite">x</button> -->
+		</div>
+</nav>
 	</section>
 <% end %>
 

@@ -1,6 +1,7 @@
 <h1>Memorial#show</h1>
 
 <%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "get" do %>
+	<p id="alert-message"><br></p>
 	<section class ="searchbtn">
 		<%= text_field_tag(:search, params[:search], class: "search_bar", autocomplete: "off") %>
 		<%= submit_tag("Search", :name => nil) %><br>

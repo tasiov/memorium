@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'notifications/new'
+  post 'notifications/new'
 
   post 'comments/new'
 

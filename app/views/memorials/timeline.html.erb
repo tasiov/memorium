@@ -40,11 +40,13 @@
   </section>
 <% end %>
 
+<section class="timeline-line"></section>
+
 
 <% @pictures.date_sort.each do |picture| %>
-  <%= label_tag picture.date %>
-  <%= label_tag picture.caption %>
-  <%= label_tag picture.description %>
+  <%= label_tag picture.date, nil, class: 'timeline date' %>
+  <%= label_tag picture.caption, nil, class: 'timeline caption' %>
+  <%= label_tag picture.description, nil, class: 'timeline description' %>
 
 	<%= image_tag picture.path, class: 'timeline-image'%>
 <% end %>

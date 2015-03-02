@@ -1,6 +1,5 @@
 body.memorials.timeline{
   background-color: rgba(101,156,239,.4);
-
 }
 
 .timeline-image-add{
@@ -50,5 +49,22 @@ body.memorials.timeline{
   left: 50%;
   transform: translate(-50%,0%);
   margin-bottom: 10px;
+}
+
+.timeline{
+  text-align: center;
+  display: block;
+}
+
+.timeline-line{
+  /* this is the vertical line */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100px;
+  height: 100%;
+  width: 0px;
+  background: FireBrick;
+  z-index:-1;
 
 }

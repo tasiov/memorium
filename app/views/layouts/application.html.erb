@@ -12,7 +12,13 @@
 
 </header>
 <nav>
-
+  <span id="notifications">Notifications</span>
+  <div id="notif-dropdown">
+    <% @current_user.received_notifications.each do |notification| %>
+      <%= notification.message %>
+    <br>
+    <% end %>
+  </div>
 </nav>
 <body class="<%= controller_name %> <%= action_name %>">
 

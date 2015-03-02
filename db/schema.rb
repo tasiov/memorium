@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302010742) do
+ActiveRecord::Schema.define(version: 20150302030404) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "message"
@@ -53,8 +53,10 @@ ActiveRecord::Schema.define(version: 20150302010742) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "status"
+    t.integer  "memorial_id"
   end
 
+  add_index "notifications", ["memorial_id"], name: "index_notifications_on_memorial_id"
   add_index "notifications", ["recipient_id"], name: "index_notifications_on_recipient_id"
   add_index "notifications", ["sender_id"], name: "index_notifications_on_sender_id"
 

@@ -100,10 +100,12 @@ var memorial_ready = function() {
 		var user_id = $('#get_data').attr('user-id');
 		var type = $(this).attr('privilege');
 		var buttons = $(this).parent();
+		var memorial = $('#get_data').attr('memorial-id');
 
 		var postData = { notification:
  			{ sender_id: user_id,
  				recipient_id: recipient_id,
+ 				memorial_id: memorial,
  			  message_type: type }
  			};
 
@@ -111,7 +113,6 @@ var memorial_ready = function() {
 			url: '/notifications/new/',
 			data: postData,
 			type: 'POST',
-			async: false,
 			success: function() { alertUser(true); },
       error: function(request, error) {
       	console.log(arguments);

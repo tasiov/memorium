@@ -1,0 +1,55 @@
+body.memorials.timeline{
+  background-color: rgba(101,156,239,.4);
+
+}
+
+.timeline-image-add{
+  display: none;
+  position: absolute;
+  text-align: center;
+  width: 270px;
+  top: 14%;
+  left: 75%;
+  background-color: CornFlowerBlue;
+  border: 3px solid black;
+}
+
+
+.timeline-button{
+  position: absolute;
+  right: 40px;
+  top: 50px;
+  height: 25px;
+  width: 110px;
+}
+
+
+.popup-x{
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  z-index: 1;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  width: 10px;
+  height: 10px;
+}
+
+.popup-x:hover{
+  right: 2px;
+  top: 2px;
+  background-color: FireBrick;
+  border-radius: 50%;
+  border: 2px solid FireBrick;
+  /*border:2px solid FireBrick;*/
+}
+
+
+.timeline-image{
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0%);
+  margin-bottom: 10px;
+
+}

@@ -12,15 +12,18 @@ var memorial_ready = function() {
 	var userJson = JSON.parse(getRequest["responseText"]);
 	console.log(userJson);
 	var users = {};
+  var user_id = $('#get_data').attr('user-id');
 	var dropdown = $('#search-dropdown');
 	var recipient_id;
 
 
   // create a hash of user id to full name
 	for (var i in userJson) {
-		var name = userJson[i].first_name + " " + userJson[i].last_name;
-		var id = userJson[i].id;
-		users[id] = name;
+    var id = userJson[i].id;
+    if (user_id != id) {
+		  var name = userJson[i].first_name + " " + userJson[i].last_name;
+		  users[id] = name;
+    }
 	}
 	console.log(users);
 
@@ -97,7 +100,6 @@ var memorial_ready = function() {
 
   // button click posts to notifications new
 	$('.invites').on("click", ".invite-button", function(event) {
-		var user_id = $('#get_data').attr('user-id');
 		var type = $(this).attr('privilege');
 		var buttons = $(this).parent();
 		var memorial = $('#get_data').attr('memorial-id');

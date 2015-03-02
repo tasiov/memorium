@@ -18,7 +18,7 @@ body.memorials.timeline{
 .timeline-button{
   position: absolute;
   right: 40px;
-  top: 50px;
+  top: 120px;
   height: 25px;
   width: 110px;
 }
@@ -41,7 +41,6 @@ body.memorials.timeline{
   background-color: FireBrick;
   border-radius: 50%;
   border: 2px solid FireBrick;
-  /*border:2px solid FireBrick;*/
 }
 
 

@@ -1,4 +1,5 @@
 <button class="timeline-button">Add media</button>
+<h3>Timeline</h3>
 
 <%= form_for @picture, url: user_memorial_picture_create_path, :html => {:multipart =>true} do |f| %>
   <% if @picture.errors.any? %>

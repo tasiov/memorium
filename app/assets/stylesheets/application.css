@@ -14,7 +14,7 @@
  *= require_self
  */
 
-/* Universal navigation bar .. for now */ 
+/* Universal navigation bar .. for now */
 
 
 nav {
@@ -22,12 +22,19 @@ nav {
 	height: 50px;
 	background: black;
 	color: white;
-	padding: 40px 10px 10px 20px;
+	padding: 40px 0px 10px 0px;
 	margin: 0px;
 	/*opacity: .3;*/
 	font-size: 20px;
-
 }
+
+.site-name{
+  margin: 0px;
+  height: 0px;
+  width: 0px;
+  padding: 0px 10px 0px 20px;
+}
+
 
 .nav_logout {
 	position: absolute;
@@ -63,12 +70,11 @@ p#logout_link {
 	position: relative;
 	display: block;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-	padding: 10px 20px 0px 40px;
+	padding: 10px 0px 0px 0px;
 	margin: 0 auto;
 	opacity: .1px;
-
-
-}*/
+}
+*/
 
 header ul li {
 	list-style: none;
@@ -76,6 +82,7 @@ header ul li {
 	float: right;
 	padding: 5px 15px 5px 0px;
 }
+
 h1 {
 	font-family: 'Open Sans', sans-serif;
 	color: white;
@@ -106,7 +113,6 @@ h3 {
 body {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	margin: 0px;
-
 }
 
 /* links */
@@ -125,7 +131,7 @@ a:hover {
 
 /* login div */
 .logwrapper {
-	
+
 	/*border: solid #909090 1px;*/
 	width: 420px;
 	padding: 10px 10px 10px 35px;
@@ -138,7 +144,7 @@ a:hover {
 
 /* for future reference */
 .login {
-	
+
 
 }
 
@@ -147,7 +153,7 @@ a:hover {
   width: 100px;
   background-color: #425068;
   color: white;
-  padding: 5px 15px; 
+  padding: 5px 15px;
   border: 0 none;
   cursor: pointer;
   -webkit-border-radius: 5px;
@@ -160,7 +166,7 @@ a:hover {
   width: 100px;
   background-color: #3D3B96;
   color: white;
-  padding: 5px 15px; 
+  padding: 5px 15px;
   border: 0 none;
   cursor: pointer;
   -webkit-border-radius: 5px;
@@ -172,7 +178,7 @@ a:hover {
 
 .newuser {
 	/*background-color: #F0F0F0;*/
-	color: #333333; 
+	color: #333333;
 	font-size: 14px;
 	padding: 5px 0px 45px 5px;
 	width: 450px;
@@ -188,7 +194,6 @@ a:hover {
 	float: left;
 	background-color: #E6E6E6;
 	opacity: 1;
-	
 }
 
 .announce ul li  {
@@ -207,6 +212,7 @@ input[type="text"], input[type="password"], input[type="date"], textarea{
 /*More specific, overriding css for edit text_fields*/
 input[type="text"].edit_field{
 	opacity: 1;	
+
 }
 
 section{
@@ -222,4 +228,3 @@ section{
 	width: 250px;
 	height: 20px;
 }
-

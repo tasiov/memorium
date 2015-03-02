@@ -8,10 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
 
-<nav> 
-Memorium
+<nav>
+<p class="site-name">Memorium</p>
 	<div class="nav_logout"><% if @current_user != nil %>
-		<%= link_to "Logout", logout_path %> 
+		<%= link_to "Logout", logout_path %>
 	<% end %>
 	</div>
 </nav>

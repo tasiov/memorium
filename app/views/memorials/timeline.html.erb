@@ -1,3 +1,4 @@
+<button class="timeline-button">Add media</button>
 <h3>Timeline</h3>
 
 <%= form_for @picture, url: user_memorial_picture_create_path, :html => {:multipart =>true} do |f| %>
@@ -12,33 +13,38 @@
     </div>
 	<% end %>
 
-	<div>
-		<%= f.label :caption %><br>
-		<%= f.text_field :caption %>
-	</div>
-	<div>
-		<%= f.label :description %><br>
-		<%= f.text_field :description %>
-	</div>
-	<div>
-		<%= f.label :date %><br>
-		<%= f.date_field :date %>
-	</div>
-	<div>
-		<%= f.file_field :path %>
-		<%= f.hidden_field :path_cache %>
-	</div>
-	<div>
-		<%= f.hidden_field :page %>
-	</div>
-	<div>
-		<%= f.submit %>
-	</div>
+  <section class="timeline-image-add">
+    <img class="popup-x" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Grey_close_x.svg/1024px-Grey_close_x.svg.png"/>
+  	<div>
+  		<%= f.label :caption %><br>
+  		<%= f.text_field :caption %>
+  	</div>
+  	<div>
+  		<%= f.label :description %><br>
+  		<%= f.text_field :description %>
+  	</div>
+  	<div>
+  		<%= f.label :date %><br>
+  		<%= f.date_field :date %>
+  	</div>
+  	<div>
+  		<%= f.file_field :path %>
+  		<%= f.hidden_field :path_cache %>
+  	</div>
+  	<div>
+  		<%= f.hidden_field :page, value: "timeline"%>
+  	</div>
+  	<div>
+  		<%= f.submit %>
+  	</div>
+  </section>
 <% end %>
 
 
-<% @pictures.each do |picture| %>
-	<tr>
-		<td class='image'><%= image_tag picture.path %></td>
-	</tr>
+<% @pictures.date_sort.each do |picture| %>
+  <%= label_tag picture.date %>
+  <%= label_tag picture.caption %>
+  <%= label_tag picture.description %>
+
+	<%= image_tag picture.path, class: 'timeline-image'%>
 <% end %>

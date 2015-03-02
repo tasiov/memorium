@@ -1,0 +1,72 @@
+.main_memorial {
+	background-color: #F0F0F0;
+  width: 80%;
+  height: 100%;
+  display: block;
+  margin: 20px 20px 0px 20px;
+  padding: 10px;
+  opacity: 1;
+
+}
+
+.title_description {
+	background-color: white;
+	padding: 10px;
+}
+.searchbtn {
+	width: 400px;
+
+}
+
+#search-dropdown {
+
+}
+
+.invites {
+ color: red;
+}
+
+.mempicture_upload {
+	border: solid black 2px;
+	height: 400px;
+	width: 400px;
+	background-color: white;
+	float: left;
+}
+
+.people_posts {
+	
+	height: 400px;
+	width: 400px;
+	background-color: white;
+	padding: 10px;
+	float: left;
+}
+
+#timeline_link {
+
+}
+
+.comment_bubble {
+	border: solid 1px black;
+	padding: 10px;
+}
+
+.user_name {
+	color: black;
+	font-weight: bold;
+	font-size: 10px
+}
+
+.comment_time {
+	color: gray;
+	font-size: 10px;
+}
+
+.user_msg {
+	color: black;
+}
+
+#comment_bar {
+	width: 330px;
+}

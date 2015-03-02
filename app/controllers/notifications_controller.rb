@@ -1,8 +1,12 @@
 class NotificationsController < ApplicationController
   def new
-    @user = @current_user
-
     @notification = Notification.new(notif_params)
+    @user = User.find(@notification.recipient_id)
+
+    @user_memorial = MemorialUser.new(user_id: @user.id, memorial_id: @notification.memorial_id,
+                                          role: @notification.message_type)
+    @user_memorial.save
+
     @notification.message = generate_message
     @notification.save
   end

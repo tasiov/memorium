@@ -13,12 +13,14 @@
   <p class="site-name">Memorium</p>
 
   <% if @current_user != nil %>
-    <div id="notif-dropdown">
-      <span id="notifications">Notifications</span>
-      <% @current_user.received_notifications.each do |notification| %>
-        <%= notification.message %>
-      <br>
-      <% end %>
+    <div class="notif">
+      <span id="notif-title">Notifications</span>
+      <div class="notif-dropdown">
+        <% @current_user.received_notifications.each do |notification| %>
+          <%= link_to notification.message, user_memorial_path(@current_user.id, notification.memorial_id) %>
+        <br>
+        <% end %>
+      </div>
     </div>
   <% end %>
 

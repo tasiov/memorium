@@ -1,6 +1,8 @@
 var notif = function(){
 
-
+  $('#notif-title').click(function() {
+    $('.notif-dropdown').toggle();
+  });
 
 }
 

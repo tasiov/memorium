@@ -40,6 +40,10 @@ class MemorialsController < ApplicationController
 
   	respond_to do |format|
   		if @user.save
+          @memorial_user = @user.memorial_users.find_by_memorial_id(@memorial.id)
+          @memorial_user.role = "creator"
+          @memorial_user.save
+
   			  format.html { redirect_to user_memorial_path(@user.id, @memorial.id), notice: 'Product was successfully created.' }
         	format.json { render :show, status: :created, location: @memorial }
     	else

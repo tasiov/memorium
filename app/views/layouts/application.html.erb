@@ -4,7 +4,6 @@
   <title>Memorium</title>
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:300italic,700italic,400,800,700,600' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
@@ -13,12 +12,14 @@
   <p class="site-name">Memorium</p>
 
   <% if @current_user != nil %>
-    <div id="notif-dropdown">
-      <span id="notifications">Notifications</span>
-      <% @current_user.received_notifications.each do |notification| %>
-        <%= notification.message %>
-      <br>
-      <% end %>
+    <div class="notif">
+      <span id="notif-title">Notifications</span>
+      <div class="notif-dropdown">
+        <% @current_user.received_notifications.each do |notification| %>
+          <%= link_to notification.message, user_memorial_path(@current_user.id, notification.memorial_id) %>
+        <br>
+        <% end %>
+      </div>
     </div>
   <% end %>
 
@@ -32,6 +33,8 @@
 
 
 <%= yield %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 </body>
 </html>

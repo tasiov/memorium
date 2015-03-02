@@ -24,7 +24,7 @@ var ready2 = function(){
 	$('body').on('blur', 'input[type="date"]', function(){
 		if($(this).val()===""){
 			$(this).css('opacity','.5');
-		};	
+		};
 	});
 }
 

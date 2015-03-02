@@ -28,6 +28,11 @@ nav {
 	font-size: 20px;
 }
 
+#notif-dropdown{
+  position: relative;
+  left: 200px;
+}
+
 .site-name{
   margin: 0px;
   height: 0px;

@@ -7,25 +7,25 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<header>
-<h1>Memorium<h1>
-
-</header>
-<nav>
-  <span id="notifications">Notifications</span>
-  <div id="notif-dropdown">
-    <% @current_user.received_notifications.each do |notification| %>
-      <%= notification.message %>
-    <br>
-    <% end %>
-  </div>
 
 <nav>
-<p class="site-name">Memorium</p>
-	<div class="nav_logout"><% if @current_user != nil %>
-		<%= link_to "Logout", logout_path %>
-	<% end %>
-	</div>
+
+  <p class="site-name">Memorium</p>
+
+  <% if @current_user != nil %>
+    <div id="notif-dropdown">
+      <span id="notifications">Notifications</span>
+      <% @current_user.received_notifications.each do |notification| %>
+        <%= notification.message %>
+      <br>
+      <% end %>
+    </div>
+  <% end %>
+
+  	<div class="nav_logout"><% if @current_user != nil %>
+  		<%= link_to "Logout", logout_path %>
+  	<% end %>
+  	</div>
 </nav>
 
 <body class="<%= controller_name %> <%= action_name %>">

@@ -11,7 +11,7 @@
 
 	width: 150px;
 	height: 20px;
-	background-color: #425068;
+	background-color: #0071BC;
 	color: white;
   padding: 5px 15px;
 }
@@ -30,15 +30,27 @@
 }
 
 .user_info {
-  background-color: white;
+  background-color: #F0F0F0;
   width: 80%;
   height: 100%;
   display: block;
-  margin: 20px 20px 20px 20px;
+  margin: 20px 20px 0px 20px;
   padding: 10px;
   opacity: 1;
 
 }
+
+.memorial_instructions {
+  
+  width: 80%;
+  height: 100%;
+  display: block;
+  margin: 0px 20px 20px 20px;
+  padding: 10px;
+  opacity: 1;
+
+}
+
 
 .memorial_section {
   background-color: white;
@@ -59,25 +71,38 @@
 }
 
 .new_memorial_popup{
-  position: absolute;
+  position: fixed;
   margin: 0px auto;
   z-index: 1;
-  bottom: 0%;
+  bottom: 0;
   left: 0px;
   right: 0px;
-  border: solid black 5px;
-  background-color: rgba(150,150,150,1);
-  width: 80%;
+  background-color: #F0F0F0;
+  width: 100%;
   display: none;
+  box-shadow: 0 0 10px .5px;
+
+
 }
 
 .popup_button{
-  height: 25px;
-  width: 100px;
+  height: 50px;
+  width: 250px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  background: #0071BC;
+  border: none;
+  float: right;
 
 }
 
+.popup_button:hover {
+  background: #0071BC;
+}
+
 form#new_memorial{
+
 }
 
 .left_div{
@@ -124,16 +149,83 @@ form#new_memorial{
 
 #new_memorial input{
   text-align: center;
+
 }
 
 #new_memorial input[type="date"]{
   text-indent: 20px;
 }
 
+.new_memorial_button {
+  background: #0071BC;
+  color: white;
+  border: none;
+}
 
 .popup_alert{
   position: relative;
   bottom: 16px;
   height: 0px;
   text-align: center;
+}
+
+#instruct {
+  
+  width: 500px;
+  float: left;
+}
+
+
+section div#box{
+  border: 1px solid #000;
+  height: 150px;
+  width: 150px;
+  box-shadow: 0px 1px 42px 0px  #F5F5F5;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  float:left;
+  margin: 10px;
+  transition: 1s all;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+section div#box:hover{
+
+  background-color: #F0F0F0;
+  margin-top: -5px;
+}
+
+.button {
+  height: 30px;
+  width: 100px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  background: #0071BC;
+  border: none;
+  text-decoration: none;
+  display: block;
+  padding: 5px;
+  margin-left: 20px;
+}
+
+
+
+.memorials_invited {
+
+  width: 80%;
+  height: 100%;
+  /*display: block;*/
+  margin: 10px 20px 20px 20px;
+  padding: 10px;
+  opacity: 1;
+  position: relative;
+}
+
+
+#box #boxlink a {
+  text-decoration: none;
+  color: black;
 }

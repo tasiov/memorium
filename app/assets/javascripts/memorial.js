@@ -16,7 +16,7 @@ var memorial_script = function(){
 
 			setTimeout(function(){
 				$('.popup_alert').slideToggle(200, function(){
-					$('.popup_alert').remove(); 	
+					$('.popup_alert').remove();
 				});
 				// $('.popup_alert').remove();
 

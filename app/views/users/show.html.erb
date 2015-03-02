@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <div class="user_info">
-<div class="user_profile_pic">
-<%= link_to (image_tag "user_silhouette.png") %>
-</div>
+  <div class="user_profile_pic">
+  <%= link_to (image_tag "user_silhouette.png") %>
+  </div>
 
 <p>
   <strong>First name:</strong>
@@ -19,60 +19,85 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+<!-- <div ><%= link_to 'Edit User', edit_user_path(@user.id) %></div>
+</div> -->
+
+<%= button_to "Edit Profile", edit_user_path(@user.id), :class => "button", :method => :get  %><br />
+
+</div>
 <br>
+
+<div class="memorial_instructions">
+  <h3> Create a Memorial in a few easy steps. </h3>
+  <div id="instruct">
+  Click the button and fill out some basic information. 
+  Start uploading photos and inviting friends and family to view or collaborate.
+  </div>
+
+  <button class="popup_button">Create Memorial</button>
+
 </div>
 
-<br>
+    <!-- The popup for creating a new memorial. -->
+    <section class = "new_memorial_popup">
+    <%= form_for([@user, @memorial]) do |f| %>
+      <fieldset class="memorial_info left_field">
+      <div class="left_div">
+         <%= f.label :title %><br>
+         <%= f.text_field :title, value: 'Memorial Title'%>
+        </div>
+        <div class="left_div">
+          <%= f.label :name %><br>
+          <%= f.text_field :name, value: 'Name' %>
+        </div>
+      </fieldset>
 
-<button class="popup_button">Memorial</button>
+      <fieldset class="memorial_info middle_field">
+           <div class="middle_div">
+         <%= f.label :birth_date %><br>
+         <%= f.date_field :birth_date %>
+        </div>
+        <div class="middle_div">
+          <%= f.label :death_date %><br>
+          <%= f.date_field :death_date %>
+        </div>
+      </fieldset>
 
-
-
-
-<!-- The popup for creating a new memorial. -->
-<section class = "new_memorial_popup">
-<%= form_for([@user, @memorial]) do |f| %>
-  <fieldset class="memorial_info left_field">
-  <div class="left_div">
-     <%= f.label :title %><br>
-     <%= f.text_field :title, value: 'Memorial Title'%>
-    </div>
-    <div class="left_div">
-      <%= f.label :name %><br>
-      <%= f.text_field :name, value: 'Name' %>
-    </div>
-  </fieldset>
-
-  <fieldset class="memorial_info middle_field">
-       <div class="middle_div">
-     <%= f.label :birth_date %><br>
-     <%= f.date_field :birth_date %>
-    </div>
-    <div class="middle_div">
-      <%= f.label :death_date %><br>
-      <%= f.date_field :death_date %>
-    </div>
-  </fieldset>
-
-  <fieldset class="memorial_info right_field">
-   <%= f.text_area :description, value: 'Description', class: 'text_area_description'  %>
-  </fieldset>
-
-  <fieldset class="memorial_info bottom_field">
-    <div class="bottom_div">
-     <%= f.submit class: "new_memorial_button" %>
-    </div>
-  </fieldset>
-<% end %>
-</section>
+      <fieldset class="memorial_info right_field">
+       <%= f.text_area :description, value: 'Description', class: 'text_area_description'  %>
+      </fieldset>
 
 <br>
+
+
+      <fieldset class="memorial_info bottom_field">
+        <div class="bottom_div">
+         <%= f.submit class: "new_memorial_button" %>
+        </div>
+      </fieldset>
+    <% end %>
+    </section>
+
+
+    <br>
+
+    
+<section class="memorials_invited">
+<h3> Memorials to view</h3>
 <% @user.memorials.each do |memorial| %>
-  <%= link_to "#{memorial.title}", user_memorial_path(@user.id, memorial.id) %>
-  <br>
-<% end %>
+  <div id="box"> 
+    <div id="boxlink"><%= link_to "#{memorial.title}", user_memorial_path(@user.id, memorial.id) %></div>
+    <br>
+    <%= memorial.name %>
+    </br><br>
+    <%= memorial.description %>
+    </br>
+    
+  </div>
+ 
+  <% end %>
+</section>
+
+
 
 <br>
-<section>
-Memorials to view go here.
-</section>

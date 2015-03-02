@@ -1,5 +1,8 @@
 <h1>Memorial#edit</h1>
 
+
+
+
 <%= form_for([@user, @memorial], url: {action: "create"}) do |f| %>
   <% if @memorial.errors.any? %>
     <div id="error_explanation">

@@ -1,4 +1,7 @@
-<h1>Memorial#show</h1>
+<h3>Memorial#show (delete this title later)</h3>
+<h3><%= @memorial.title %></h3>
+<p>Honoring <%= @memorial.name %> </p>
+<p><%= @memorial.description %></p>
 
 <%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "get" do %>
 	<p id="alert-message"><br></p>
@@ -16,6 +19,7 @@
 	</section>
 <% end %>
 
+<br>
 <%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "post", :id => "comment_form" do %>
 	<%= text_field_tag(:enter_comment, params[:enter_comment], id: "comment_bar") %>
 	<%= submit_tag("Enter", :id => "submit_comment") %>
@@ -25,7 +29,10 @@
 <div id= "comment-list">
 	<% @memorial.comments.each do |comment| %>
 		<div>
-			<span class='user_name'><%= comment.user.first_name %></span>
+
+			<span class='user_name'><%= comment.user.first_name %>: </span>   
+
+			
 			<%= comment.message %><br>
 			<% if comment.created_at > (Time.new - 86400000) %>
 				<span class='comment_time'><%= time_ago_in_words(comment.created_at) %> ago</span>
@@ -36,5 +43,7 @@
   	<% end %>
  </div>
 
+
 <%= link_to "Go To Timeline", user_memorial_timeline_path %>
+
 

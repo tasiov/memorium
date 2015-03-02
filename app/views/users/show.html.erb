@@ -77,14 +77,23 @@
 
 
     <br>
-    <section class="memorials_invited">
-      <h3> Memorials you've been invited to view </h3>
 
-      <section>
-      <div id="box">JFK Memorial</div>
-      <div id="box">Nana's Memorial</div>
-      <div id="box">Memorial for Rex</div>
-      <div id="box">Our 1st Grade Teacher</div>
-      </section>
-    </section>
+    
+<section class="memorials_invited">
+<h3> Memorials to view</h3>
+<% @user.memorials.each do |memorial| %>
+  <div id="box"> 
+    <%= memorial.title %>
+    <br>
+    <%= memorial.name %>
+    </br><br>
+    <%= memorial.description %>
+    </br>
+  </div>
+ 
+  <% end %>
+</section>
 
+
+
+<br>

@@ -111,11 +111,12 @@ body {
 
 /* links */
 a {
+	color: white;
 	text-decoration: none;
 }
 
 a:hover {
-	color: red;
+	color: gray;
 }
 
 /* login div */

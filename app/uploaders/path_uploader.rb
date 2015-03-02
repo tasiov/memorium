@@ -13,13 +13,13 @@ class PathUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  # For working on heroku, temporarily
- def cache_dir
-   "#{Rails.root}/tmp/uploads"
- end
+ #  # For working on heroku, temporarily
+ # def cache_dir
+ #   "#{Rails.root}/tmp/uploads"
+ # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
@@ -44,7 +44,7 @@ class PathUploader < CarrierWave::Uploader::Base
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   # def extension_white_list
-  #   %w(jpg jpeg gif png mov mp4 webm ogv)
+  #   %w(jpg jpeg gif png mov mp4 webm)
   # end
 
   # Override the filename of the uploaded files:

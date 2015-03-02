@@ -225,3 +225,7 @@ section div#box:hover{
 }
 
 
+#box #boxlink a {
+  text-decoration: none;
+  color: black;
+}

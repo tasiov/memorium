@@ -67,6 +67,9 @@
        <%= f.text_area :description, value: 'Description', class: 'text_area_description'  %>
       </fieldset>
 
+<br>
+
+
       <fieldset class="memorial_info bottom_field">
         <div class="bottom_div">
          <%= f.submit class: "new_memorial_button" %>
@@ -83,12 +86,13 @@
 <h3> Memorials to view</h3>
 <% @user.memorials.each do |memorial| %>
   <div id="box"> 
-    <%= memorial.title %>
+    <div id="boxlink"><%= link_to "#{memorial.title}", user_memorial_path(@user.id, memorial.id) %></div>
     <br>
     <%= memorial.name %>
     </br><br>
     <%= memorial.description %>
     </br>
+    
   </div>
  
   <% end %>

@@ -13,11 +13,11 @@ var memorial_ready = function() {
  		    userId = dataTag.attr('user-id'),
  		    memorialId = dataTag.attr('memorial-id');
 
- 		var postData = { comment: 
- 			{ user_id: userId, 
+ 		var postData = { comment:
+ 			{ user_id: userId,
  			  created_at: null,
  			  message: message,
- 			  memorial_id: memorialId } 
+ 			  memorial_id: memorialId }
  			};
 
  		$.ajax({
@@ -30,7 +30,8 @@ var memorial_ready = function() {
  				    "</span>: " + message +
  				    "<br><span class='comment_time'>1 second ago</span></div>";
  				$('#comment-list').append(temp_tag);
-			}
+			},
+      error: function(request, error) { console.log(arguments) }
 		});
 
 		$('#comment_bar').val("");
@@ -38,3 +39,4 @@ var memorial_ready = function() {
 };
 
 $(".memorials.show").ready(memorial_ready);
+$(".memorials.show").on('page:load', memorial_ready);

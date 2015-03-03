@@ -15,6 +15,7 @@
 }
 .searchbtn {
 	width: 400px;
+	margin-right: 0px;
 
 }
 
@@ -37,7 +38,7 @@
 .people_posts {
 	
 	height: 400px;
-	width: 400px;
+	width: 800px;
 	background-color: white;
 	padding: 10px;
 	float: left;

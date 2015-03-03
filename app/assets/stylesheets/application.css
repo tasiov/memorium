@@ -29,16 +29,28 @@ nav {
 }
 
 .notif{
-  position: relative;
-  left: 200px;
+  position: absolute;
+  right: 180px;
+  font-size: 14px;
 }
 
 .notif-dropdown {
+  position: absolute;
   display: none;
+  background: white;
+  right: 0;
+  width: 250px;
+  font-size: 10px;
+  padding: 5px;
+  color: black;
+  box-shadow: 3px 3px 7px #999;
+
 }
 
 .notif-dropdown a {
-  color: white;
+  color: red;
+
+
 }
 
 .site-name{

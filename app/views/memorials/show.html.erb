@@ -1,7 +1,6 @@
 <div class="main_memorial">
 	<div class="title_description">
-		<h3>Memorial#show (delete this title later)</h3>
-		<h3><%= @memorial.title %></h3>
+		<h3>Memorial Title: <%= @memorial.title %></h3>
 		<p>Honoring <%= @memorial.name %> </p>
 		<p><%= @memorial.description %></p>
 
@@ -23,8 +22,8 @@
 	</div>
 	<br>
 
-	<div class="mempicture_upload">
-	</div>
+<!-- 	<div class="mempicture_upload">
+	</div> -->
 
 	<div class="people_posts">
 	Post comment
@@ -39,7 +38,7 @@
 		<% @memorial.comments.each do |comment| %>
 			<div class="comment_bubble">
 
-				<span class='user_name'><%= comment.user.first_name %> </span>   
+				<span class='user_name'><%= comment.user.first_name %></span>   
 				<br>
 				<span class="user_msg"><%= comment.message %><br>
 				<% if comment.created_at > (Time.new - 86400000) %>

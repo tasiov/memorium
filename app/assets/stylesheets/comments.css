@@ -1,0 +1,27 @@
+div.comment_bubble{
+  border: 1px solid #000;
+  height: 80px;
+  width: 250px;
+  box-shadow: 0px 1px 42px 0px  #F5F5F5;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  float:left;
+  margin: 5px;
+  transition: 1s all;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  text-align: left;
+  overflow: auto;
+}
+
+div.comment_bubble:hover{
+
+  background-color: #F0F0F0;
+  margin-top: -1px;
+}
+
+.comment_time {
+	text-align: right;
+}
+

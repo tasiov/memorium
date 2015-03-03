@@ -16,7 +16,6 @@
 //= require jquery-readyselector
 //= require_tree .
 var ready2 = function(){
-
 	$('body').on('focus', 'input[type="date"]', function(){
 		$(this).css('opacity','1');
 	});

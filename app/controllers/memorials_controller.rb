@@ -12,6 +12,7 @@ class MemorialsController < ApplicationController
 
   def show
     @users = User.search params[:search]
+    @comment = @memorial.comments.new
   end
 
   def timeline

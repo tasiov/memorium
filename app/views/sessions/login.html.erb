@@ -28,13 +28,13 @@
 		<% else %>
 
 			<%= form_tag "/login" do %>
-				
+
 					<div class="tags"><!-- Email --><br>
-					<%= text_field_tag :email , "email" %>
+					<%= text_field_tag :email , "", placeholder: "email" %>
 					</div>
 				</br>
 					<div class="tags"><!-- Password --> <br>
-					<%= text_field_tag :password , "password" %>
+					<%= text_field_tag :password , "", placeholder: "password" %>
 				</br>
 				<p class="submitbutton"><%= submit_tag "Log In" %></p>
 			<% end %>
@@ -46,13 +46,13 @@
 		<% if flash[:notice] %>
 			<p><%= flash[:notice] %></p>
 		<% end %>
-	
+
 	<% end %>
 	</div>
 </div>
 
 
 
-	
+
 </body>
 

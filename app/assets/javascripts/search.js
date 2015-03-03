@@ -1,19 +1,23 @@
 var memorial_ready = function() {
 
 	// get the current list of users from the database
- 	var getRequestUser = $.ajax({
+ 	$.ajax({
 		url: '/users.json',
 		dataType: 'json',
 		type: 'GET',
-		async: false,
     error: function(request, error) {
         console.log(arguments);
+    },
+    success: function(response) {
+      onRequestUserSuccess(response);
     }
 	});
+}
 
+function onRequestUserSuccess(response) {
 	var input = $('#search').val();
-	var allJson = JSON.parse(getRequestUser["responseText"]);
-	console.log(userJson);
+	var allJson = response;
+
   var userJson = allJson["user"] // grab the users from the JSON
   var userMemorialJson = allJson["memorial_users"] // grab the memorial_users from the JSON
 	var users = {};
@@ -21,7 +25,6 @@ var memorial_ready = function() {
   var memorial = $('#get_data').attr('memorial-id'); // get id of current memorial
 	var dropdown = $('#search-dropdown');
 	var recipient_id;
-  console.log(userMemorialJson);
 
   // create a hash of user id to full name
 	for (var i in userJson) {
@@ -34,14 +37,15 @@ var memorial_ready = function() {
 	//console.log(users);
 
   // disable chrome dropdown on select fields
-  $(".search_bar").mousedown(function(e) {
+  $('body').on('mousedown', ".search_bar", function(e) {
     if ($(this).find('option').length > 20) {
         e.preventDefault(); //return false will also work
     }
 	});
 
   // search bar with dropdown autofill functionality
-	$('.search_bar').on('keyup', function(event){
+	$('body').on('keyup', '.search_bar', function(event){
+    console.log('keyup');
 		event.preventDefault();
 		var currentSearchString = $(this).val();
 		dropdown.empty();
@@ -65,7 +69,7 @@ var memorial_ready = function() {
 	});
 
 	// dynamically create buttons based on search bar results
-	$('#search-dropdown').on("click", ".drop-names", function(event) {
+	$('body').on('click', "#search-dropdown .drop-names", function(event) {
 		var searchText = $('.search_bar').val('');
 		var userName = $(this).text();
 		recipient_id = $(this).attr("recipient_id");
@@ -151,5 +155,5 @@ var memorial_ready = function() {
 	});
 };
 
-$(".memorials.show").ready(memorial_ready);
-$(".memorials.show").on('page:load', memorial_ready);
+$(memorial_ready);
+$(document).on('page:load', memorial_ready);

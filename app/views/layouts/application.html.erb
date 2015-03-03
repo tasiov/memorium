@@ -4,6 +4,7 @@
   <title>Memorium</title>
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:300italic,700italic,400,800,700,600' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
@@ -15,7 +16,7 @@
     <div class="notif">
       <span id="notif-title">Notifications
 
-      (<%= @current_user.received_notifications.where(status: "green").count %>)</span>
+      (<%= @current_user.received_notifications.where(status: "unread").count %>)</span>
       <div class="notif-dropdown">
         <% @current_user.received_notifications.each do |notification| %>
           <%= link_to notification.message, notif_change_status_path(notification.id), "status" => notification.status %>
@@ -35,12 +36,9 @@
   	</div>
 </nav>
 
-<body class="<%= controller_name %> <%= action_name %>">
-
+<body>
 
 <%= yield %>
-
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 </body>
 </html>

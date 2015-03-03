@@ -8,13 +8,13 @@ class NotificationsController < ApplicationController
     @user_memorial.save
 
     @notification.message = generate_message
-    @notification.status = "green"
+    @notification.status = "unread"
     @notification.save
   end
 
   def change_status
     @notification = Notification.find(params[:format])
-    @notification.status = "red"
+    @notification.status = "read"
     @notification.save
     redirect_to user_memorial_path(@current_user.id, @notification.memorial_id)
   end

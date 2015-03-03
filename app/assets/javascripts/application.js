@@ -26,6 +26,11 @@ var ready2 = function(){
 			$(this).css('opacity','.5');
 		};
 	});
+
+  $('#notif-title').click(function() {
+    $('.notif-dropdown').toggle();
+  });
+
 }
 
 $(document).ready(ready2);

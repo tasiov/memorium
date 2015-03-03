@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   post 'notifications/new'
+  get 'notifications/change_status', to: 'notifications#change_status', as: :notif_change_status
 
   post 'comments/new'
 

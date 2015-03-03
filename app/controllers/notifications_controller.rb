@@ -8,7 +8,15 @@ class NotificationsController < ApplicationController
     @user_memorial.save
 
     @notification.message = generate_message
+    @notification.status = "green"
     @notification.save
+  end
+
+  def change_status
+    @notification = Notification.find(params[:format])
+    @notification.status = "red"
+    @notification.save
+    redirect_to user_memorial_path(@current_user.id, @notification.memorial_id)
   end
 
   private
@@ -21,6 +29,6 @@ class NotificationsController < ApplicationController
   end
 
   def notif_params
-    params.require(:notification).permit(:sender_id, :recipient_id, :memorial_id, :message_type)
+    params.require(:notification).permit(:sender_id, :recipient_id, :memorial_id, :message_type, :id)
   end
 end

@@ -5,4 +5,5 @@ class Notification < ActiveRecord::Base
 
   validates :sender, presence: true
   validates :recipient, presence: true
+
 end

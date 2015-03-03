@@ -31,6 +31,10 @@ class MemorialsController < ApplicationController
     end
   end
 
+  def get_memorial_user
+    @memorial_user = MemorialUser.all
+  end
+
   def edit
   end
 

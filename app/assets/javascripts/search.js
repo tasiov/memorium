@@ -1,21 +1,27 @@
 var memorial_ready = function() {
 
 	// get the current list of users from the database
- 	var getRequest = $.ajax({
+ 	var getRequestUser = $.ajax({
 		url: '/users.json',
 		dataType: 'json',
 		type: 'GET',
-		async: false
+		async: false,
+    error: function(request, error) {
+        console.log(arguments);
+    }
 	});
 
 	var input = $('#search').val();
-	var userJson = JSON.parse(getRequest["responseText"]);
+	var allJson = JSON.parse(getRequestUser["responseText"]);
 	console.log(userJson);
+  var userJson = allJson["user"] // grab the users from the JSON
+  var userMemorialJson = allJson["memorial_users"] // grab the memorial_users from the JSON
 	var users = {};
-  var user_id = $('#get_data').attr('user-id');
+  var user_id = $('#get_data').attr('user-id'); // get id of current user
+  var memorial = $('#get_data').attr('memorial-id'); // get id of current memorial
 	var dropdown = $('#search-dropdown');
 	var recipient_id;
-
+  console.log(userMemorialJson);
 
   // create a hash of user id to full name
 	for (var i in userJson) {
@@ -25,7 +31,7 @@ var memorial_ready = function() {
 		  users[id] = name;
     }
 	}
-	console.log(users);
+	//console.log(users);
 
   // disable chrome dropdown on select fields
   $(".search_bar").mousedown(function(e) {
@@ -46,7 +52,7 @@ var memorial_ready = function() {
 		}
 
 		for(var i in users){
-			console.log(i);
+			//console.log(i);
 			if (users[i].toLowerCase().indexOf(currentSearchString.toLowerCase())===0) {
 				dropdown.append('<li class="drop-names" recipient_id="' + i + '">' + users[i] + '</li>');
 			};
@@ -63,6 +69,15 @@ var memorial_ready = function() {
 		var searchText = $('.search_bar').val('');
 		var userName = $(this).text();
 		recipient_id = $(this).attr("recipient_id");
+    for (var i in userMemorialJson) {
+      var id = userMemorialJson[i].user_id;
+      var memorial_id = userMemorialJson[i].memorial_id;
+      if ((recipient_id == id) && (memorial == memorial_id)) {
+        alertUser(false);
+        revertToSearch($('#search-dropdown'));
+        return;
+      }
+    }
 		var buttons = $('.invites');
 		buttons.append('<span class="invite-button" privilege="contributor">Allow ' + userName + ' to contribute</span>',
 			             '<span class="invite-button" privilege="viewer">Allow ' + userName + ' to view</span>',
@@ -78,12 +93,14 @@ var memorial_ready = function() {
   	revertToSearch(buttons);
   });
 
+  // refocus user on the search bar
   function revertToSearch(parent) {
   	parent.empty();
   	parent.hide();
   	$('#search')[0].focus();
   };
 
+  // alert user with notification status
   function alertUser(flag) {
   	var tag = $('#alert-message');
   	tag.empty();
@@ -102,7 +119,6 @@ var memorial_ready = function() {
 	$('.invites').on("click", ".invite-button", function(event) {
 		var type = $(this).attr('privilege');
 		var buttons = $(this).parent();
-		var memorial = $('#get_data').attr('memorial-id');
 
 		var postData = { notification:
  			{ sender_id: user_id,
@@ -111,11 +127,21 @@ var memorial_ready = function() {
  			  message_type: type }
  			};
 
+    var addToJson = {
+      memorial_id: memorial,
+      user_id: recipient_id,
+      role: type
+    }
+
  		$.ajax({
 			url: '/notifications/new/',
 			data: postData,
 			type: 'POST',
-			success: function() { alertUser(true); },
+      async: false,
+			success: function() {
+        alertUser(true);
+        userMemorialJson.push(addToJson);
+      },
       error: function(request, error) {
       	console.log(arguments);
       	alertUser(false);

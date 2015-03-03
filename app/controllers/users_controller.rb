@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @memorial_users = MemorialUser.all
   end
 
   # GET /users/new

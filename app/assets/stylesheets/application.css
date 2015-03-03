@@ -58,6 +58,16 @@ nav {
 
 }
 
+.nav_profile {
+  position: absolute;
+  font-size: 14px;
+  right: 140px;
+}
+
+.nav_profile a {
+  color: white;
+}
+
 p#logout_link {
 	color: white;
 	float: right;

@@ -29,10 +29,7 @@
 <div id= "comment-list">
 	<% @memorial.comments.each do |comment| %>
 		<div>
-
-			<span class='user_name'><%= comment.user.first_name %>: </span>   
-
-			
+			<span class='user_name'><%= comment.user.first_name %>: </span>
 			<%= comment.message %><br>
 			<% if comment.created_at > (Time.new - 86400000) %>
 				<span class='comment_time'><%= time_ago_in_words(comment.created_at) %> ago</span>

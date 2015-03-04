@@ -1,6 +1,7 @@
 class MemorialsController < ApplicationController
   before_action :set_memorial, only: [:show, :edit, :update, :destroy, :timeline, :picturecreate]
   before_action :set_user, only: [:create, :new, :index, :show, :timeline, :picturecreate]
+  before_action :set_picture, only: [:picturedestroy]
 
   def index
   	@memorials = @user.memorials.all
@@ -29,6 +30,14 @@ class MemorialsController < ApplicationController
       else
         format.html { render :timeline }
       end
+    end
+  end
+
+  def picturedestroy
+    @picture.destroy
+    respond_to do |format|
+      format.html { redirect_to :back, notice: "Picture was successfully destroyed."}
+      format.json { head :no_content }
     end
   end
 
@@ -86,6 +95,10 @@ class MemorialsController < ApplicationController
 
     def set_user
       @user = User.find(params[:user_id])
+    end
+
+    def set_picture
+      @picture = Picture.find(params[:id])
     end
 
   	# Never trust parameters from the scary internet, only allow the white list through.

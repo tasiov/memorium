@@ -84,13 +84,24 @@
 
 <section class="memorials_invited">
 <h3> Memorials to view</h3>
+
+  <div class="placeholder_boxes">
+    <div class="memorial_placeholder">
+    </div>
+
+    <div class="memorial_placeholder2">
+    </div>
+  </div>
+
 <% @user.memorials.each do |memorial| %>
   <div id="box">
     <div id="boxlink"><%= link_to "#{memorial.title}", user_memorial_path(@user.id, memorial.id) %></div>
     <br>
     <%= memorial.name %>
+
     </br><br>
     <%= @user.memorial_users.find_by_memorial_id(memorial.id).role %>
+
     </br>
   </div>
 

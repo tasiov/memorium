@@ -30,7 +30,7 @@
 <div class="memorial_instructions">
   <h3> Create a Memorial in a few easy steps. </h3>
   <div id="instruct">
-  Click the button and fill out some basic information. 
+  Click the button and fill out some basic information.
   Start uploading photos and inviting friends and family to view or collaborate.
   </div>
 
@@ -81,20 +81,20 @@
 
     <br>
 
-    
+
 <section class="memorials_invited">
 <h3> Memorials to view</h3>
 <% @user.memorials.each do |memorial| %>
-  <div id="box"> 
+  <div id="box">
     <div id="boxlink"><%= link_to "#{memorial.title}", user_memorial_path(@user.id, memorial.id) %></div>
     <br>
     <%= memorial.name %>
     </br><br>
     <%= memorial.description %>
     </br>
-    
+
   </div>
- 
+
   <% end %>
 </section>
 

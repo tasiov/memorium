@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require jquery-readyselector
 //= require_tree .
+
+Turbolinks.enableProgressBar()
 var ready2 = function(){
 
 	$('body').on('focus', 'input[type="date"]', function(){
@@ -24,7 +26,7 @@ var ready2 = function(){
 	$('body').on('blur', 'input[type="date"]', function(){
 		if($(this).val()===""){
 			$(this).css('opacity','.5');
-		};	
+		};
 	});
 }
 

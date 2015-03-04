@@ -4,11 +4,13 @@
 		<p>Honoring <%= @memorial.name %> </p>
 		<p><%= @memorial.description %></p>
 
-		<%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "get" do %>
-			<p id="alert-message"><br></p>
+		<%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "get", class: "search-form" do %>
+			<br>
+			<p id="alert-message"></p>
+			</br>
 			<section class ="searchbtn">
 				<%= text_field_tag(:search, params[:search], class: "search_bar", autocomplete: "off") %>
-				<%= submit_tag("Search", :name => nil) %><br>
+				<%= submit_tag("Search", name: nil, class:"new_memorial_button") %><br>
 				<ul id="search-dropdown">
 				<!-- 	<li class="drop-names"></li>  -->
 				</ul>
@@ -16,20 +18,22 @@
 				<!-- 	<span class="invite-buttons"></span>'  -->
 				<!-- <button id="cancel-invite">x</button> -->
 				</div>
-		</nav>
 			</section>
 		<% end %>
+	<span id="timeline_link"><%= link_to "Go To Timeline", user_memorial_timeline_path %></span>
 	</div>
 	<br>
 
-<!-- 	<div class="mempicture_upload">
-	</div> -->
-
 	<div class="people_posts">
+			<div class="mempicture_upload">
+			(note for team: picture upload goes here - w:800px x h:400 px)
+			</div>
+	<br>		
 	Post comment
+	</br>
 	<%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "post", :id => "comment_form" do %>
 		<%= text_field_tag(:enter_comment, params[:enter_comment], id: "comment_bar") %>
-		<%= submit_tag("Enter", :id => "submit_comment") %>
+		<%= submit_tag("Enter", :id => "submit_comment", class:"new_memorial_button") %>
 	<% end %>
 	<div id="get_data" style="display: none;" user-id="<%= @current_user.id %>" memorial-id="<%= @memorial.id %>"><%= @current_user.first_name %></div>
 	<br>
@@ -52,6 +56,6 @@
 	 </div>
 </div>
 
-<%= link_to "Go To Timeline", user_memorial_timeline_path %>
+
 
 

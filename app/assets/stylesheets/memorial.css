@@ -1,26 +1,41 @@
+
+
 .main_memorial {
 	background-color: #F0F0F0;
   width: 80%;
-  height: 100%;
+  height: 800px;
   display: block;
   margin: 20px 20px 0px 20px;
   padding: 10px;
   opacity: 1;
-
 }
 
 .title_description {
 	background-color: white;
+	height: 200px;
 	padding: 10px;
+	position: relative;
+}
+
+.search-form {
+	margin: 0px;
+	position: absolute;
+	top: 0%;
+	right: 0%;
+
 }
 .searchbtn {
-	width: 400px;
-	margin-right: 0px;
+	/*width: 400px;*/
+	margin: 0px 0px 0px 0px;
+	position: relative;
+	top: 0%;
+	right: 0%;
+	width: 350px;
+
 
 }
 
 #search-dropdown {
-
 }
 
 .invites {
@@ -30,27 +45,32 @@
 .mempicture_upload {
 	border: solid black 2px;
 	height: 400px;
-	width: 400px;
+	width: 800px;
 	background-color: white;
-	float: left;
+	float: center;
+	margin-left: 50px;
 }
 
 .people_posts {
 	
-	height: 400px;
-	width: 800px;
+	height: 100%;
 	background-color: white;
 	padding: 10px;
-	float: left;
 }
 
 #timeline_link {
-
 }
 
 .comment_bubble {
 	border: solid 1px black;
 	padding: 10px;
+}
+
+.comment_bubble:hover {
+
+/*	-ms-transform: translate(0, -5px); /* IE 9 */
+/*-webkit-transform: translate(0, -5px); /* Chrome, Safari, Opera */
+ /* -transform: translate(0,-5px);*/
 }
 
 .user_name {
@@ -70,4 +90,8 @@
 
 #comment_bar {
 	width: 330px;
+}
+
+#timeline_link {
+	float: right;
 }

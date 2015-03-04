@@ -1,4 +1,4 @@
-div.comment_bubble{
+.comment_bubble{
   border: 1px solid #000;
   height: 80px;
   width: 250px;
@@ -8,17 +8,21 @@ div.comment_bubble{
   box-sizing: border-box;
   float:left;
   margin: 5px;
-  transition: 1s all;
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   text-align: left;
   overflow: auto;
+  transition: 1s all;
+
 }
 
-div.comment_bubble:hover{
+.comment_bubble:hover{
 
   background-color: #F0F0F0;
-  margin-top: -1px;
+  /*margin-top: -1px;*/
+  -ms-transform: translate(0, -5px); /* IE 9 */
+  -webkit-transform: translate(0, -5px); /* Chrome, Safari, Opera */
+  -transform: translate(0,-5px);
 }
 
 .comment_time {

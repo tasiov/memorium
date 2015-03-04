@@ -90,9 +90,8 @@
     <br>
     <%= memorial.name %>
     </br><br>
-    <%= memorial.description %>
+    <%= @user.memorial_users.find_by_memorial_id(memorial.id).role %>
     </br>
-
   </div>
 
   <% end %>

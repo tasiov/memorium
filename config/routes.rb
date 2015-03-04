@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'notifications/new'
+  post 'notifications/new'
+  get 'notifications/change_status', to: 'notifications#change_status', as: :notif_change_status
 
-  post 'comments/new'
+  #post 'comments/new'
+  resources :comments, only: [:create]
 
   root 'users#send_user_to_home'
   # root 'sessions#login'

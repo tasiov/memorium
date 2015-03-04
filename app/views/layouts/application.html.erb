@@ -9,15 +9,32 @@
 </head>
 
 <nav>
-<p class="site-name">Memorium</p>
-	<div class="nav_logout"><% if @current_user != nil %>
-		<%= link_to "Logout", logout_path %>
-	<% end %>
-	</div>
+
+  <p class="site-name">Memorium</p>
+
+  <% if @current_user != nil %>
+    <div class="notif">
+      <span id="notif-title">Notifications <%= User.num_notif(@current_user) %></span>
+      <div class="notif-dropdown">
+        <% User.get_recent(@current_user).each do |notification| %>
+          <%= link_to truncate(notification.message, length: 50), notif_change_status_path(notification.id), "status" => notification.status %>
+        <br>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+    <div class="nav_profile">
+      <%= link_to "Profile", @user %>
+    </div>
+
+  	<div class="nav_logout"><% if @current_user != nil %>
+  		<%= link_to "Logout", logout_path %>
+  	<% end %>
+  	</div>
 </nav>
 
-<body class="<%= controller_name %> <%= action_name %>">
-
+<body>
 
 <%= yield %>
 

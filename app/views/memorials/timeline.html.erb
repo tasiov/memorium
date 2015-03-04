@@ -41,7 +41,7 @@
 <% end %>
 
 
-<%= image_tag "swirly2.gif", class: "timeline-top" %>
+<%= image_tag "icon3.png", class: "timeline-top" %>
 
 <!-- The vertical timeline line. -->
 <section class="timeline-line"></section>
@@ -58,10 +58,13 @@
       <%= image_tag picture.path, class: 'timeline-image'%>
     </div>
 
+    <div class="text-container">
+
     <!-- The picture text-information labels. -->
     <%= label_tag picture.date, nil, class: 'timeline date' %>
     <%= label_tag picture.caption, nil, class: 'timeline caption' %>
     <%= label_tag picture.description, nil, class: 'timeline description' %>
+    </div>
   </section>
 <% end %>
 

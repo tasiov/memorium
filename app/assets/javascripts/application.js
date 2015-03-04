@@ -18,7 +18,6 @@
 
 Turbolinks.enableProgressBar()
 var ready2 = function(){
-
 	$('body').on('focus', 'input[type="date"]', function(){
 		$(this).css('opacity','1');
 	});
@@ -28,6 +27,11 @@ var ready2 = function(){
 			$(this).css('opacity','.5');
 		};
 	});
+
+  $('#notif-title').click(function() {
+    $('.notif-dropdown').toggle();
+  });
+
 }
 
 $(document).ready(ready2);

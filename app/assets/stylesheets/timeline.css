@@ -1,7 +1,13 @@
-body.memorials.timeline{
-  background-color: rgba(101,156,239,.4);
+/*Styling for the add media button*/
+.timeline-button{
+  position: absolute;
+  right: 40px;
+  top: 120px;
+  height: 25px;
+  width: 110px;
 }
 
+/*Styling for the add media popup*/
 .timeline-image-add{
   display: none;
   position: absolute;
@@ -14,16 +20,7 @@ body.memorials.timeline{
   z-index: 1;
 }
 
-
-.timeline-button{
-  position: absolute;
-  right: 40px;
-  top: 120px;
-  height: 25px;
-  width: 110px;
-}
-
-
+/*Styling for the add media popup close button*/
 .popup-x{
   position: absolute;
   right: 4px;
@@ -43,6 +40,7 @@ body.memorials.timeline{
   border: 2px solid FireBrick;
 }
 
+/*Timeline picture delete button styling*/
 .timeline-x{
   position: absolute;
   z-index: 1;
@@ -60,6 +58,7 @@ body.memorials.timeline{
   border: 2px solid FireBrick;
 }
 
+/*Affects each timeline image.*/
 .timeline-image{
   display: block;
   position: relative;
@@ -86,6 +85,7 @@ body.memorials.timeline{
   top: 150px;
 }*/
 
+/*The wrapper containing a single image.*/
 .img-container{
   position: relative;
   display: inline-block;
@@ -104,15 +104,58 @@ body.memorials.timeline{
   box-shadow: 0px 0px 2px 3px black;
 }
 
-.timeline{
+/*The vertical timeline line.*/
+.timeline-line{
+  position: absolute;
+  top: 190px;
+  left: 14.8%;
+  height: 85%;
+  width: 0px;
+  background: FireBrick;
+  z-index:-1;
+  overflow: hidden;
+  box-shadow: 0px 0px 2px 3px black;
+}
+
+/*The dot at the very top of the timeline.*/
+.timeline-top{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  /*border: 6px solid rgb(15,15,15);*/
+  /*box-shadow: 0px 0px 100px 3px rgb(90,90,90);*/
+  /*border-radius: 50%;*/
+  left: 12.9%;
+  top: 8%;
+}
+
+/*The dots associated with each timeline entry.*/
+.timeline-dot{
+  position: absolute;
+  bottom: 41%;
+  left: 12.9%;
+}
+
+.timeline-entry{
+  background-color: rgba(0,0,0,0);
+  margin: 0px;
+  padding: 0px;
+  position: relative;
   text-align: center;
+}
+
+.text-container{
   display: inline;
+  width: 30%;
+  height: 100%;
+  position: absolute;
+
 }
 
 .date{
   position: absolute;
   left: 5%;
-  bottom: 49%;
+  bottom: 46%;
 }
 
 .description{
@@ -129,40 +172,3 @@ body.memorials.timeline{
   text-decoration: underline;
 }
 
-.timeline-top{
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  border: 6px solid rgb(15,15,15);
-  box-shadow: 0px 0px 100px 3px rgb(90,90,90);
-
-  border-radius: 50%;
-  left: 12.5%;
-  top: 8%;
-}
-
-/*The vertical timeline line.*/
-.timeline-line{
-  position: absolute;
-  top: 190px;
-  left: 14.8%;
-  height: 85%;
-  width: 0px;
-  background: FireBrick;
-  z-index:-1;
-  overflow: hidden;
-  box-shadow: 0px 0px 2px 3px black;
-}
-
-.timeline-entry{
-  background-color: rgba(0,0,0,0);
-  margin: 0px;
-  padding: 0px;
-  position: relative;
-}
-
-.timeline-dot{
-  position: absolute;
-  bottom: 41%;
-  left: 12.9%;
-}

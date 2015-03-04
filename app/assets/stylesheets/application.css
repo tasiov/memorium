@@ -26,6 +26,19 @@ nav {
 	font-size: 20px;
 }
 
+.notif{
+  position: relative;
+  left: 200px;
+}
+
+.notif-dropdown {
+  display: none;
+}
+
+.notif-dropdown a {
+  color: white;
+}
+
 .site-name{
   margin: 0px;
   height: 0px;
@@ -41,6 +54,16 @@ nav {
 	color: white;
 	text-decoration: none;
 
+}
+
+.nav_profile {
+  position: absolute;
+  font-size: 14px;
+  right: 140px;
+}
+
+.nav_profile a {
+  color: white;
 }
 
 p#logout_link {

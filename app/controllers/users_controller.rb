@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
+  before_action :redirect_unless_loggedin, except: [:new, :create]
 
   def index
     @users = User.all
+    @memorial_users = MemorialUser.all
   end
 
   # GET /users/new

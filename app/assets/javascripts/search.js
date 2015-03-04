@@ -20,6 +20,7 @@ function onRequestUserSuccess(response) {
 
   var userJson = allJson["user"] // grab the users from the JSON
   var userMemorialJson = allJson["memorial_users"] // grab the memorial_users from the JSON
+  console.log(allJson);
 	var users = {};
   var user_id = $('#get_data').attr('user-id'); // get id of current user
   var memorial = $('#get_data').attr('memorial-id'); // get id of current memorial
@@ -91,7 +92,7 @@ function onRequestUserSuccess(response) {
 	});
 
   // cancel button reverts to search bar
-  $('.invites').on("click", "#cancel-invite", function(event) {
+  $('body').on("click", ".invites #cancel-invite", function(event) {
   	event.preventDefault();
   	var buttons = $(this).parent();
   	revertToSearch(buttons);
@@ -120,7 +121,7 @@ function onRequestUserSuccess(response) {
   };
 
   // button click posts to notifications new
-	$('.invites').on("click", ".invite-button", function(event) {
+	$('body').on("click", ".invites .invite-button", function(event) {
 		var type = $(this).attr('privilege');
 		var buttons = $(this).parent();
 

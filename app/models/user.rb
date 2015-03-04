@@ -20,4 +20,13 @@ class User < ActiveRecord::Base
 	  	  []
 	  end
   end
+
+  def self.num_notif(user)
+    num = user.received_notifications.where(status: "unread").count
+    if num != 0
+    	"(" + num.to_s + ")"
+    else
+    	nil
+    end
+  end
 end

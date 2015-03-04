@@ -1,7 +1,7 @@
 <button class="timeline-button">Add media</button>
 <h3>Timeline</h3>
 
-<%= form_for @picture, url: user_memorial_picture_create_path, :html => {:multipart =>true} do |f| %>
+<%= form_for @picture, url: user_memorial_timeline_path, :html => {:multipart =>true} do |f| %>
   <% if @picture.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
@@ -41,10 +41,31 @@
 <% end %>
 
 
-<% @pictures.date_sort.each do |picture| %>
-  <%= label_tag picture.date %>
-  <%= label_tag picture.caption %>
-  <%= label_tag picture.description %>
+<%= image_tag "icon3.png", class: "timeline-top" %>
 
-	<%= image_tag picture.path, class: 'timeline-image'%>
+<!-- The vertical timeline line. -->
+<section class="timeline-line"></section>
+
+
+<% @pictures.date_sort.each do |picture| %>
+  <section class="timeline-entry">
+    <!-- The "dot" on the timeline. -->
+    <%= image_tag "icon3.png", class: "timeline-dot" %>
+
+    <!-- A container for a single image and its destroy button. -->
+    <div class="img-container">
+      <%= link_to image_tag("x.png", class: 'timeline-x'), user_memorial_timeline_path(id: picture.id), method: 'delete'%>
+      <%= image_tag picture.path, class: 'timeline-image'%>
+    </div>
+
+    <div class="text-container">
+
+    <!-- The picture text-information labels. -->
+    <%= label_tag picture.date, nil, class: 'timeline date' %>
+    <%= label_tag picture.caption, nil, class: 'timeline caption' %>
+    <%= label_tag picture.description, nil, class: 'timeline description' %>
+    </div>
+  </section>
 <% end %>
+
+<div class="timeline.bottom"></div>

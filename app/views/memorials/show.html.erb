@@ -20,42 +20,48 @@
 				</div>
 			</section>
 		<% end %>
+
 	<span id="timeline_link"><%= link_to "Go To Timeline", user_memorial_timeline_path %></span>
 	</div>
 	<br>
 
 	<div class="people_posts">
 			<div class="mempicture_upload">
-			(note for team: picture upload goes here - w:800px x h:400 px)
+			<!-- (note for team: picture upload goes here - w:800px x h:400 px) -->
 			</div>
-	<br>		
+	<br>
 	Post comment
 	</br>
-	<%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "post", :id => "comment_form" do %>
-		<%= text_field_tag(:enter_comment, params[:enter_comment], id: "comment_bar") %>
-		<%= submit_tag("Enter", :id => "submit_comment", class:"new_memorial_button") %>
+
+
+	<%= form_for @comment, remote: true, :id => "comment_form" do |f| %>
+		<%= f.text_field(:message, id: "comment_bar") %>
+		<%= f.hidden_field :memorial_id %>
+		<%= f.submit("Enter", :id => "submit_comment", class: "new_memorial_button") %>
 	<% end %>
+
 	<div id="get_data" style="display: none;" user-id="<%= @current_user.id %>" memorial-id="<%= @memorial.id %>"><%= @current_user.first_name %></div>
 	<br>
 
 	<div id= "comment-list">
 		<% @memorial.comments.each do |comment| %>
+			<% next unless comment.user %>
+
 			<div class="comment_bubble">
 
-				<span class='user_name'><%= comment.user.first_name %></span>   
+				<span class='user_name'><%= comment.user.first_name rescue nil %>: </span>
 				<br>
-				<span class="user_msg"><%= comment.message %><br>
-				<% if comment.created_at > (Time.new - 86400000) %>
-					<span class='comment_time'><%= time_ago_in_words(comment.created_at) %> ago</span>
-				<% else %>
-					<span class='comment_time'><%= comment.created_at.strftime("%B %d at %I:%M%p") %></span>
+
+				<span class="user_msg"><%= comment.message %></span><br>
+				<% if comment.created_at %>
+					<% if comment.created_at > 1.day.ago %>
+						<span class='comment_time'><%= time_ago_in_words(comment.created_at) %> ago</span>
+					<% else %>
+						<span class='comment_time'><%= comment.created_at.strftime("%B %d at %I:%M%p") %></span>
+					<% end %>
 				<% end %>
 			</div>
-	  	<% end %>
-	  	</div>
-	 </div>
+		<% end %>
+	</div>
 </div>
-
-
-
 

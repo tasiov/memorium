@@ -1,3 +1,7 @@
+body {
+  background-image: url('gray_jean.png');
+}
+
 .user_profile_pic img {
 
 	width: 100px;
@@ -30,7 +34,7 @@
 }
 
 .user_info {
-  background-color: #F0F0F0;
+  background-color: white;
   width: 80%;
   height: 100%;
   display: block;
@@ -45,7 +49,7 @@
   width: 80%;
   height: 100%;
   display: block;
-  margin: 0px 20px 20px 20px;
+  margin: 0px 20px 80px 20px;
   padding: 10px;
   opacity: 1;
 
@@ -87,18 +91,21 @@
 
 .popup_button{
   height: 50px;
-  width: 250px;
-  color: white;
+  width: 200px;
+  /*color: white;*/
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
-  background: #0071BC;
+  background: transparent;
   border: none;
   float: right;
+  border: solid black 4px;
 
 }
 
 .popup_button:hover {
-  background: #0071BC;
+  background: black;
+  color: white;
+  border: none;
 }
 
 form#new_memorial{
@@ -178,23 +185,28 @@ form#new_memorial{
 
 section div#box{
   border: 1px solid #000;
-  height: 150px;
-  width: 150px;
-  box-shadow: 0px 1px 42px 0px  #F5F5F5;
+  height: 200px;
+  width: 300px;
+  /*box-shadow: 0px 1px 42px 0px #F5F5F5;*/
   padding: 20px;
   text-align: center;
-  box-sizing: border-box;
-  float:left;
+  /*box-sizing: border-box;*/
   margin: 10px;
-  transition: 1s all;
+  /*transition: 1s all;*/
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
+/*  margin-left: auto;
+  margin-right: auto;*/
+
 }
 
 section div#box:hover{
 
   background-color: #F0F0F0;
-  margin-top: -5px;
+  /*margin-top: -5px;*/
+/*  -ms-transform: translate(0, -5px); /* IE 9 */
+ /* -webkit-transform: translate(0, -5px); /* Chrome, Safari, Opera */
+  /*transform: translate(0,-5px);*/
 }
 
 .button {
@@ -218,14 +230,33 @@ section div#box:hover{
   width: 80%;
   height: 100%;
   /*display: block;*/
-  margin: 10px 20px 20px 20px;
-  padding: 10px;
+  margin: 5px 20px 20px 20px;
+  padding: 10px 10px 20px 10px;
   opacity: 1;
   position: relative;
+  background: white;
 }
 
 
 #box #boxlink a {
   text-decoration: none;
   color: black;
+}
+
+.placeholder_boxes {
+  padding: 10px 80px 20px 20px;
+}
+.memorial_placeholder {
+  border: dashed;
+  width: 300px;
+  height: 200px;
+  float: left;
+  text-align: center;
+}
+
+.memorial_placeholder2 {
+  border: dashed;
+  width: 300px;
+  height: 200px;
+  float: right;
 }

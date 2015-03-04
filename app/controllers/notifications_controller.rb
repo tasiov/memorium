@@ -26,6 +26,7 @@ class NotificationsController < ApplicationController
     privilege = @notification.message_type
 
     "#{sender} invited you to be a #{privilege} at #{memorial_title}"
+
   end
 
   def notif_params

@@ -16,16 +16,16 @@
 		<!-- 	<span class="invite-buttons"></span>'  -->
 		<!-- <button id="cancel-invite">x</button> -->
 		</div>
-</nav>
 	</section>
 <% end %>
 
 <br>
 
+<!-- Should replace the weird form in carmen's version. -->
 <%= form_for @comment, remote: true, :id => "comment_form" do |f| %>
 	<%= f.text_field(:message, id: "comment_bar") %>
 	<%= f.hidden_field :memorial_id %>
-	<%= f.submit("Enter", :id => "submit_comment") %>
+	<%= f.submit("Enter", :id => "submit_comment", class: "new_memorial_button") %>
 <% end %>
 
 
@@ -45,7 +45,7 @@
 				<% end %>
 			<% end %>
 		</div>
-  	<% end %>
+  <% end %>
  </div>
 
 

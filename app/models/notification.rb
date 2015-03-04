@@ -6,5 +6,4 @@ class Notification < ActiveRecord::Base
   validates :sender, presence: true
   validates :recipient, presence: true
 
-  #scope :recent -> { @current_user.received_notifications.where(status: "unread").count }
 end

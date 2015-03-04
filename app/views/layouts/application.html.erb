@@ -16,7 +16,7 @@
     <div class="notif">
       <span id="notif-title">Notifications <%= User.num_notif(@current_user) %></span>
       <div class="notif-dropdown">
-        <% @current_user.received_notifications.each do |notification| %>
+        <% User.get_recent(@current_user).each do |notification| %>
           <%= link_to truncate(notification.message, length: 50), notif_change_status_path(notification.id), "status" => notification.status %>
         <br>
         <% end %>

@@ -4,21 +4,23 @@
 		<p>Honoring <%= @memorial.name %> </p>
 		<p><%= @memorial.description %></p>
 
-		<%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "get", class: "search-form" do %>
-			<br>
-			<p id="alert-message"></p>
-			</br>
-			<section class ="searchbtn">
-				<%= text_field_tag(:search, params[:search], class: "search_bar", autocomplete: "off") %>
-				<%= submit_tag("Search", name: nil, class:"new_memorial_button") %><br>
-				<ul id="search-dropdown">
-				<!-- 	<li class="drop-names"></li>  -->
-				</ul>
-				<div class="invites">
-				<!-- 	<span class="invite-buttons"></span>'  -->
-				<!-- <button id="cancel-invite">x</button> -->
-				</div>
-			</section>
+		<% if @check_privelege == "creator" %>
+			<%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "get", class: "search-form" do %>
+				<br>
+				<p id="alert-message"><br></p>
+				</br>
+				<section class ="searchbtn">
+					<%= text_field_tag(:search, params[:search], class: "search_bar", autocomplete: "off") %>
+					<%= submit_tag("Search", name: nil, class:"new_memorial_button") %><br>
+					<ul id="search-dropdown">
+					<!-- 	<li class="drop-names"></li>  -->
+					</ul>
+					<div class="invites">
+					<!-- 	<span class="invite-buttons"></span>'  -->
+					<!-- <button id="cancel-invite">x</button> -->
+					</div>
+				</section>
+			<% end %>
 		<% end %>
 
 	<span id="timeline_link"><%= link_to "Go To Timeline", user_memorial_timeline_path %></span>

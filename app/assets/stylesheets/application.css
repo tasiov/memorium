@@ -244,16 +244,15 @@ a:hover {
 
 /*Basic css for any text_field */
 input[type="text"], input[type="password"], input[type="date"], textarea{
-	opacity: .5;
+	color: rgba(0,0,0,1);
 	width: 250px;
 	height: 20px;
 	font-size: 15px;
 }
 
-/*More specific, overriding css for edit text_fields*/
-input[type="text"].edit_field{
-	opacity: 1;	
-
+/*More specific, overriding css for datefields.*/
+input[type="date"].date_field{
+	color: rgba(0,0,0,.4);
 }
 
 section{

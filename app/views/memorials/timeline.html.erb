@@ -17,15 +17,15 @@
     <img class="popup-x" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Grey_close_x.svg/1024px-Grey_close_x.svg.png"/>
   	<div>
   		<%= f.label :caption %><br>
-  		<%= f.text_field :caption %>
+  		<%= f.text_field :caption, placeholder: "Caption" %>
   	</div>
   	<div>
   		<%= f.label :description %><br>
-  		<%= f.text_field :description %>
+  		<%= f.text_field :description, placeholder: "Description" %>
   	</div>
   	<div>
   		<%= f.label :date %><br>
-  		<%= f.date_field :date %>
+  		<%= f.date_field :date, placeholder: "Date", class: 'date_field' %>
   	</div>
   	<div>
   		<%= f.file_field :path %>

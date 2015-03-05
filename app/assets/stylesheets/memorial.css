@@ -52,7 +52,7 @@
 }
 
 .people_posts {
-	
+
 	height: 100%;
 	background-color: white;
 	padding: 10px;
@@ -61,35 +61,14 @@
 #timeline_link {
 }
 
-.comment_bubble {
-	border: solid 1px black;
-	padding: 10px;
-}
-
-.comment_bubble:hover {
-
-/*	-ms-transform: translate(0, -5px); /* IE 9 */
-/*-webkit-transform: translate(0, -5px); /* Chrome, Safari, Opera */
- /* -transform: translate(0,-5px);*/
-}
-
 .user_name {
 	color: black;
 	font-weight: bold;
 	font-size: 10px
 }
 
-.comment_time {
-	color: gray;
-	font-size: 10px;
-}
-
 .user_msg {
 	color: black;
-}
-
-#comment_bar {
-	width: 330px;
 }
 
 #timeline_link {

@@ -17,7 +17,7 @@ class MemorialsController < ApplicationController
   end
 
   def timeline
-    @pictures = @memorial.pictures.all
+    @pictures = @memorial.pictures.where(page: 'timeline')
     @picture = Picture.new
   end
 

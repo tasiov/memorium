@@ -19,12 +19,12 @@
 Turbolinks.enableProgressBar()
 var ready2 = function(){
 	$('body').on('focus', 'input[type="date"]', function(){
-		$(this).css('opacity','1');
+		$(this).css('color','rgba(0,0,0,1)');
 	});
 
 	$('body').on('blur', 'input[type="date"]', function(){
 		if($(this).val()===""){
-			$(this).css('opacity','.5');
+			$(this).css('color','rgba(0,0,0,.4)');
 		};
 	});
 

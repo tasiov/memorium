@@ -34,9 +34,12 @@
 	</br>
 
 	<%= form_for @comment, remote: true, :id => "comment_form" do |f| %>
-		<%= f.text_field(:message, id: "comment_bar") %>
+		<%= f.text_area(:message, id: "comment_bar") %>
 		<%= f.hidden_field :memorial_id %>
-		<%= f.submit("Enter", :id => "submit_comment", class: "new_memorial_button") %>
+		<section class="comment-submission">
+			<%= f.file_field(:path, id: "comment_image") %>
+				<%= f.submit("Enter", :id => "submit_comment", class: "new_memorial_button") %>
+		</section>
 	<% end %>
 
 	<div id="get_data" style="display: none;" user-id="<%= @current_user.id %>" memorial-id="<%= @memorial.id %>"><%= @current_user.first_name %></div>
@@ -47,7 +50,7 @@
 			<% next unless comment.user %>
 
 			<div class="comment_bubble">
-
+				<%= link_to image_tag("x.png", class: 'comment-x'), comments_path(id: comment.id), method: 'delete'%>
 				<span class='user_name'><%= comment.user.first_name rescue nil %>: </span>
 				<br>
 

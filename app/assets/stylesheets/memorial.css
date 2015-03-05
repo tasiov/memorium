@@ -58,6 +58,8 @@
 	border: solid black 1px;
 	padding: 10px;
 	font-size: 10px;
+	box-shadow: 3px 3px 7px #999;
+  z-index: 2;
 
 }
 

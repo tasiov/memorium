@@ -12,6 +12,8 @@ class MemorialsController < ApplicationController
   end
 
   def show
+    @check_privilege = MemorialUser.where(user_id: @user.id, memorial_id: @memorial.id).first
+    redirect_to user_path(@user.id) if @check_privilege == nil
     @users = User.search params[:search]
     @comment = @memorial.comments.new
   end

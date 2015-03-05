@@ -4,6 +4,7 @@
 		<p>Honoring <%= @memorial.name %> </p>
 		<p><%= @memorial.description %></p>
 
+		<% if @check_privilege.role == "creator" %>
 		<%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "get", class: "search-form" do %>
 			<br>
 			<p id="alert-message"></p>
@@ -19,6 +20,7 @@
 				<!-- <button id="cancel-invite">x</button> -->
 				</div>
 			</section>
+			<% end %>
 		<% end %>
 
 	<span id="timeline_link"><%= link_to "Go To Timeline", user_memorial_timeline_path %></span>
@@ -49,7 +51,7 @@
 
 			<div class="comment_bubble">
 
-				<span class='user_name'><%= comment.user.first_name rescue nil %>: </span>
+				<span class='user_name'><%= comment.user.first_name rescue nil %></span>
 				<br>
 
 				<span class="user_msg"><%= comment.message %></span><br>

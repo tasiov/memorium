@@ -78,14 +78,14 @@ function onRequestUserSuccess(response) {
       var id = userMemorialJson[i].user_id;
       var memorial_id = userMemorialJson[i].memorial_id;
       if ((recipient_id == id) && (memorial == memorial_id)) {
-        alertUser(false);
+        alertUser("already exists");
         revertToSearch($('#search-dropdown'));
         return;
       }
     }
 		var buttons = $('.invites');
-		buttons.append('<span class="invite-button" id="btn1" privilege="contributor">Allow ' + userName + ' to contribute</span>',
-			             '<span class="invite-button" id="btn2" privilege="viewer">Allow ' + userName + ' to view</span>',
+		buttons.append('<span class="invite-button" id="btn1" privilege="contributor">Invite ' + userName + ' to contribute</span>',
+			             '<span class="invite-button" id="btn2" privilege="viewer">Invite ' + userName + ' to view</span>',
 			             '<button id="cancel-invite">x</button>');
 		buttons.show();
 		dropdown.hide();
@@ -109,11 +109,13 @@ function onRequestUserSuccess(response) {
   function alertUser(flag) {
   	var tag = $('#alert-message');
   	tag.empty();
-  	if(flag) {
+  	if(flag === "success") {
   		tag.text('Notification sent');
-		} else {
+		} else if(flag === "failure") {
 			tag.text('Notification failed to send');
-		}
+		} else if(flag === "already exists") {
+      tag.text('Invite has already been sent to this user');
+    }
 		setInterval(function () {
 			tag.text("");
 			tag.append("<br>");
@@ -144,12 +146,12 @@ function onRequestUserSuccess(response) {
 			type: 'POST',
       async: false,
 			success: function() {
-        alertUser(true);
+        alertUser("success");
         userMemorialJson.push(addToJson);
       },
       error: function(request, error) {
       	console.log(arguments);
-      	alertUser(false);
+      	alertUser("failure");
       }
 		});
  		revertToSearch(buttons);

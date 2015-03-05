@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 	validates :password, presence: true, length: { in: 6..20 }
 
 	def self.get_recent(user)
-		user.received_notifications.limit(5)
+    user.received_notifications.order("created_at").reverse_order.limit(5)
 	end
 
 	def self.search(search)

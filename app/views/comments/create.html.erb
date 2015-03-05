@@ -1,5 +1,6 @@
-<div>
-  <span class='user_name'><%= @comment.user.first_name %></span>: <%= @comment.message %>
+<div class="comment_bubble">
+  <span class='user_name'><%= @comment.user.first_name %></span>
   <br>
+  <span class="user_msg"><%= @comment.message %></span><br>
   <span class='comment_time'><%= time_ago_in_words(@comment.created_at) %> ago</span>
 </div>

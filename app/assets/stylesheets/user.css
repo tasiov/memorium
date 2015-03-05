@@ -167,6 +167,8 @@ form#new_memorial{
   background: #0071BC;
   color: white;
   border: none;
+  height: 25px;
+  width: 180px;
 }
 
 .popup_alert{

@@ -28,10 +28,16 @@ var ready2 = function(){
 		};
 	});
 
-  $('#notif-title').click(function() {
-    $('.notif-dropdown').toggle();
+  $("body").click(function(event) {
+    var checkClick = $(event.target);
+    var dropdown = $(".notif-dropdown");
+    var notifIcon = $('#notif-title');
+    if (checkClick[0] === notifIcon[0]) {
+      dropdown.toggle();
+    } else if (checkClick[0] !== dropdown[0] && dropdown.is(":visible")) {
+      dropdown.hide();
+    }
   });
-
 }
 
 $(document).ready(ready2);

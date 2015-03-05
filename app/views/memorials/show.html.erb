@@ -10,12 +10,12 @@
 			</br>
 			<section class ="searchbtn">
 				<%= text_field_tag(:search, params[:search], class: "search_bar", autocomplete: "off") %>
-				<%= submit_tag("Search", name: nil, class:"new_memorial_button") %><br>
+				<%= submit_tag("Search", name: nil, class:"search_button") %><br>
 				<ul id="search-dropdown">
 				<!-- 	<li class="drop-names"></li>  -->
 				</ul>
 				<div class="invites">
-				<!-- 	<span class="invite-buttons"></span>'  -->
+				<!-- 	<span class="invite-buttons"></span> -->
 				<!-- <button id="cancel-invite">x</button> -->
 				</div>
 			</section>
@@ -37,7 +37,7 @@
 	<%= form_for @comment, remote: true, :id => "comment_form" do |f| %>
 		<%= f.text_field(:message, id: "comment_bar") %>
 		<%= f.hidden_field :memorial_id %>
-		<%= f.submit("Enter", :id => "submit_comment", class: "new_memorial_button") %>
+		<%= f.submit("Enter", :id => "submit_comment", class: "enter_button") %>
 	<% end %>
 
 	<div id="get_data" style="display: none;" user-id="<%= @current_user.id %>" memorial-id="<%= @memorial.id %>"><%= @current_user.first_name %></div>

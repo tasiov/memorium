@@ -84,8 +84,8 @@ function onRequestUserSuccess(response) {
       }
     }
 		var buttons = $('.invites');
-		buttons.append('<span class="invite-button" privilege="contributor">Allow ' + userName + ' to contribute</span>',
-			             '<span class="invite-button" privilege="viewer">Allow ' + userName + ' to view</span>',
+		buttons.append('<span class="invite-button" id="btn1" privilege="contributor">Allow ' + userName + ' to contribute</span>',
+			             '<span class="invite-button" id="btn2" privilege="viewer">Allow ' + userName + ' to view</span>',
 			             '<button id="cancel-invite">x</button>');
 		buttons.show();
 		dropdown.hide();

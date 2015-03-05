@@ -2,11 +2,13 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:destroy]
 
   def create
-    p "hello"
   	@comment = @current_user.comments.new(comment_params)
   	@comment.save
-  	#@user = @current_user
-    render layout: false
+    if @comment.path.url != nil
+      redirect_to :back
+    else
+      render layout: false
+    end
   end
 
   def destroy

@@ -3,4 +3,5 @@
   <br>
   <span class="user_msg"><%= @comment.message %></span><br>
   <span class='comment_time'><%= time_ago_in_words(@comment.created_at) %> ago</span>
+  <%= image_tag @comment.path, class: 'comment-picture' %>
 </div>

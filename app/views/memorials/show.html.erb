@@ -33,7 +33,7 @@
 				<% if @memorial.path.url != nil %>
 					<%= image_tag @memorial.path, class: 'memorial-picture' %>
 				<% else %>
-					<p>Upload a picture!</p>
+					<button class="empty-memorial-picture">Upload a picture!</button>
 				<% end %>
 
 				<!-- The form for uploading a new memorial comment picture. -->

@@ -30,6 +30,11 @@
 	text-align: right;
   color: gray;
   font-size: 10px;
+  position: absolute;
+  vertical-align: bottom;
+  /*height: 100%;*/
+  bottom: 0;
+  padding-bottom: 5px;
 }
 
 .comment-submission{
@@ -65,4 +70,5 @@
 .comment-picture{
   max-height:50px;
   width: auto;
+  padding: 5px;
 }

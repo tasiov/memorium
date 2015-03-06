@@ -4,7 +4,7 @@
 		<p>Honoring <%= @memorial.name %> </p>
 		<p><%= @memorial.description %></p>
 
-		<% if @check_privelege == "creator" %>
+		<% if @check_privilege.role == "creator" %>
 			<%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "get", class: "search-form" do %>
 				<br>
 				<p id="alert-message"><br></p>

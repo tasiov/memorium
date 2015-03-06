@@ -154,21 +154,27 @@
 
 .date{
   position: absolute;
-  left: 5%;
+  left: 0%;
   bottom: 46%;
 }
 
+.caption{
+  /*position: absolute;*/
+  /*bottom: 70%;*/
+  display: block;
+  margin-top: 120px;
+  text-align: center;
+  text-decoration: underline;
+}
+
 .description{
-  position: absolute;
-  left: 80%;
-  bottom: 50%;
+/*  position: absolute;
+  left: 50%;
+  bottom: 50%;*/
+  margin-top: 20px;
+  display: block;
   text-align: center;
 }
 
-.caption{
-  position: absolute;
-  left: 80%;
-  bottom: 70%;
-  text-decoration: underline;
-}
+
 

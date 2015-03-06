@@ -1,5 +1,5 @@
 class MemorialsController < ApplicationController
-  before_action :set_memorial, only: [:show, :edit, :update, :destroy, :timeline, :picturecreate]
+  before_action :set_memorial, only: [:show, :edit, :update, :destroy, :timeline, :picturecreate, :edit_picture]
   before_action :set_user, only: [:create, :new, :index, :show, :timeline, :picturecreate]
   before_action :set_picture, only: [:picturedestroy]
 
@@ -19,7 +19,7 @@ class MemorialsController < ApplicationController
   end
 
   def timeline
-    @pictures = @memorial.pictures.all
+    @pictures = @memorial.pictures.where(page: 'timeline')
     @picture = Picture.new
   end
 
@@ -50,6 +50,16 @@ class MemorialsController < ApplicationController
   def edit
   end
 
+  def edit_picture
+    respond_to do |format|
+      if @memorial.update(memorial_params)
+        format.html { redirect_to user_memorial_path, notice: 'Memorial was successfully updated.' }
+        format.json { render :show, status: :ok, location: @memorial }
+      end
+    end
+  end
+
+
   def create
 
     @memorial = @user.memorials.new(memorial_params)
@@ -72,7 +82,7 @@ class MemorialsController < ApplicationController
   def update
     respond_to do |format|
       if @memorial.update(memorial_params)
-        format.html { redirect_to @memorial, notice: 'Memorial was successfully updated.' }
+        format.html { redirect_to user_memorial_path, notice: 'Memorial was successfully updated.' }
         format.json { render :show, status: :ok, location: @memorial }
       else
         format.html { render :edit }
@@ -105,7 +115,7 @@ class MemorialsController < ApplicationController
 
   	# Never trust parameters from the scary internet, only allow the white list through.
   	def memorial_params
-    	params.require(:memorial).permit(:title, :name, :description, :birth_date, :death_date)
+    	params.require(:memorial).permit(:title, :name, :description, :birth_date, :death_date, :path)
   	end
 
     def picture_params

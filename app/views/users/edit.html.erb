@@ -15,19 +15,23 @@
 
   <div class="field">
     <%= f.label :first_name %><br>
-    <%= f.text_field :first_name, class: "edit_field"%>
+    <%= f.text_field :first_name, placeholder: :first_name, class: "edit_field"%>
   </div>
   <div class="field">
     <%= f.label :last_name %><br>
-    <%= f.text_field :last_name, class: "edit_field" %>
+    <%= f.text_field :last_name, placeholder: :last_name, class: "edit_field" %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email, class: "edit_field" %>
+    <%= f.text_field :email, placeholder: :email, class: "edit_field" %>
   </div>
   <div class="field">
   	<%= f.label :password %><br>
-  	<%= f.text_field :password, value: 'Password' %>
+  	<%= f.password_field :password, placeholder: :password %>
+  </div>
+  <div class="field">
+    <%= f.label 'Avatar' %><br>
+    <%= f.file_field :path %>
   </div>
   <div class="actions=">
     <%= f.submit %>

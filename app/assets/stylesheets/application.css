@@ -27,10 +27,17 @@ nav {
 	vertical-align: text-top;
 }
 
-.notif{
+.notif {
   position: absolute;
-  right: 180px;
+  right: 200px;
   font-size: 14px;
+}
+
+.notif:hover {
+  position: absolute;
+  right: 200px;
+  font-size: 14px;
+  color: gray;
 }
 
 .notif-dropdown {
@@ -44,12 +51,12 @@ nav {
   padding: 15px;
   color: #999999;
   box-shadow: 3px 3px 7px #999;
+  z-index: 2;
 
 }
 
 .notif-dropdown a {
   color: black;
-
 
 }
 
@@ -244,16 +251,15 @@ a:hover {
 
 /*Basic css for any text_field */
 input[type="text"], input[type="password"], input[type="date"], textarea{
-	opacity: .5;
+	color: rgba(0,0,0,1);
 	width: 250px;
 	height: 20px;
 	font-size: 15px;
 }
 
-/*More specific, overriding css for edit text_fields*/
-input[type="text"].edit_field{
-	opacity: 1;	
-
+/*More specific, overriding css for datefields.*/
+input[type="date"].date_field{
+	color: rgba(0,0,0,.4);
 }
 
 section{

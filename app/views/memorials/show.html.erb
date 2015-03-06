@@ -5,21 +5,21 @@
 		<p><%= @memorial.description %></p>
 
 		<% if @check_privilege.role == "creator" %>
-			<%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "get", class: "search-form" do %>
-				<br>
-				<p id="alert-message"><br></p>
-				</br>
-				<section class ="searchbtn">
-					<%= text_field_tag(:search, params[:search], class: "search_bar", autocomplete: "off") %>
-					<%= submit_tag("Search", name: nil, class:"new_memorial_button") %><br>
-					<ul id="search-dropdown">
-					<!-- 	<li class="drop-names"></li>  -->
-					</ul>
-					<div class="invites">
-					<!-- 	<span class="invite-buttons"></span>'  -->
-					<!-- <button id="cancel-invite">x</button> -->
-					</div>
-				</section>
+		<%= form_tag user_memorial_path(@memorial.users.first, @memorial), :method => "get", class: "search-form" do %>
+			<br>
+			<p id="alert-message"></p>
+			</br>
+			<section class ="searchbtn">
+				<%= text_field_tag(:search, params[:search], class: "search_bar", autocomplete: "off") %>
+				<%= submit_tag("Search", name: nil, class:"search_button") %><br>
+				<ul id="search-dropdown">
+				<!-- 	<li class="drop-names"></li>  -->
+				</ul>
+				<div class="invites">
+				<!-- 	<span class="invite-buttons"></span> -->
+				<!-- <button id="cancel-invite">x</button> -->
+				</div>
+			</section>
 			<% end %>
 		<% end %>
 
@@ -29,17 +29,31 @@
 
 	<div class="people_posts">
 			<div class="mempicture_upload">
-			<!-- (note for team: picture upload goes here - w:800px x h:400 px) -->
+				<!-- Only displays picture if there are any. -->
+				<% if @memorial.path.url != nil %>
+					<%= image_tag @memorial.path, class: 'memorial-picture' %>
+				<% else %>
+					<button class="empty-memorial-picture">Upload a picture!</button>
+				<% end %>
+
+				<!-- The form for uploading a new memorial comment picture. -->
+				<%= form_for([@user, @memorial], url: user_edit_memorial_picture_path) do |f| %>
+				  <%= f.file_field :path, id: "memorial_image" %>
+ 					<%= f.submit "Upload", id: "submit_image" %>
+				<% end %>
 			</div>
 	<br>
 	Post comment
 	</br>
 
-
-	<%= form_for @comment, remote: true, :id => "comment_form" do |f| %>
-		<%= f.text_field(:message, id: "comment_bar") %>
+	<!-- Form for creating a new comment. -->
+	<%= form_for(@comment, remote: true, authenticity_token: true, id: "comment_form") do |f| %>
+		<%= f.text_area(:message, id: "comment_bar") %>
 		<%= f.hidden_field :memorial_id %>
-		<%= f.submit("Enter", :id => "submit_comment", class: "new_memorial_button") %>
+		<section class="comment-submission">
+			<%= f.file_field(:path, id: "comment_image") %>
+			<%= f.submit("Enter", :id => "submit_comment", class: "enter_button") %>
+		</section>
 	<% end %>
 
 	<div id="get_data" style="display: none;" user-id="<%= @current_user.id %>" memorial-id="<%= @memorial.id %>"><%= @current_user.first_name %></div>
@@ -51,7 +65,8 @@
 
 			<div class="comment_bubble">
 
-				<span class='user_name'><%= comment.user.first_name rescue nil %></span>
+				<%= link_to image_tag("x.png", class: 'comment-x'), comments_path(id: comment.id), method: 'delete'%>
+				<span class='user_name'><%= comment.user.first_name rescue nil %> </span>
 				<br>
 
 				<span class="user_msg"><%= comment.message %></span><br>
@@ -62,6 +77,7 @@
 						<span class='comment_time'><%= comment.created_at.strftime("%B %d at %I:%M%p") %></span>
 					<% end %>
 				<% end %>
+				<%= image_tag comment.path, class: 'comment-picture' %>
 			</div>
 		<% end %>
 	</div>

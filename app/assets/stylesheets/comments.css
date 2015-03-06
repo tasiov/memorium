@@ -13,6 +13,7 @@
   text-align: left;
   overflow: auto;
   transition: 1s all;
+  position: relative;
 
 }
 
@@ -27,5 +28,47 @@
 
 .comment_time {
 	text-align: right;
+  color: gray;
+  font-size: 10px;
+  position: absolute;
+  vertical-align: bottom;
+  /*height: 100%;*/
+  bottom: 0;
+  padding-bottom: 5px;
 }
 
+.comment-submission{
+  display: none;
+}
+
+#comment_bar {
+  width: 330px;
+}
+
+.comment-x{
+  position: absolute;
+  z-index: 1;
+  right: 4px;
+  top: 4px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  width: 10px;
+  height: 10px;
+}
+
+.comment-x:hover{
+  right: 2px;
+  top: 2px;
+  background-color: FireBrick;
+  border-radius: 50%;
+  border: 2px solid FireBrick;
+}
+
+#comment_image{
+}
+
+.comment-picture{
+  max-height:50px;
+  width: auto;
+  padding: 5px;
+}

@@ -2,7 +2,7 @@
 
 <div class="user_info">
   <div class="user_profile_pic">
-  <%= link_to (image_tag "user_silhouette.png") %>
+  <%= image_tag @user.path%>
   </div>
 
 <p>
@@ -44,28 +44,30 @@
       <fieldset class="memorial_info left_field">
       <div class="left_div">
          <%= f.label :title %><br>
-         <%= f.text_field :title, value: 'Memorial Title'%>
+         <%= f.text_field :title, placeholder: 'Memorial Title'%>
         </div>
         <div class="left_div">
           <%= f.label :name %><br>
-          <%= f.text_field :name, value: 'Name' %>
+          <%= f.text_field :name, placeholder: 'Name' %>
         </div>
       </fieldset>
 
       <fieldset class="memorial_info middle_field">
            <div class="middle_div">
          <%= f.label :birth_date %><br>
-         <%= f.date_field :birth_date %>
+         <%= f.date_field :birth_date, class: 'date_field' %>
         </div>
         <div class="middle_div">
           <%= f.label :death_date %><br>
-          <%= f.date_field :death_date %>
+          <%= f.date_field :death_date, class: 'date_field' %>
         </div>
       </fieldset>
 
       <fieldset class="memorial_info right_field">
-       <%= f.text_area :description, value: 'Description', class: 'text_area_description'  %>
+       <%= f.text_area :description, placeholder: 'Description', class: 'text_area_description'  %>
       </fieldset>
+      <%= image_tag("x.png", class: 'create-memorial-x')%>
+
 
 <br>
 

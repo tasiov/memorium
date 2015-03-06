@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302030404) do
+ActiveRecord::Schema.define(version: 20150306002950) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "message"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150302030404) do
     t.integer  "memorial_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "path"
   end
 
   add_index "comments", ["memorial_id"], name: "index_comments_on_memorial_id"
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150302030404) do
     t.string   "name"
     t.date     "birth_date"
     t.date     "death_date"
+    t.string   "path"
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -80,6 +82,7 @@ ActiveRecord::Schema.define(version: 20150302030404) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "last_name"
+    t.string   "path"
   end
 
 end

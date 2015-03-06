@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   #post 'comments/new'
   resources :comments, only: [:create]
+  delete 'comments', to: 'comments#destroy'
+
 
   root 'users#send_user_to_home'
   # root 'sessions#login'
@@ -26,6 +28,8 @@ Rails.application.routes.draw do
     get 'memorials/new', to: 'memorials#new', as: :new_memorial
 
     get 'memorials/:id/edit', to: 'memorials#edit', as: :edit_memorial
+
+    put 'memorials/:id', to: 'memorials#edit_picture', as: :edit_memorial_picture
 
     get 'memorials/:id', to: 'memorials#show', as: :memorial
     patch 'memorials/:id', to: 'memorials#update'

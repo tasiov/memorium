@@ -1,35 +1,30 @@
 var memorial_script = function(){
 
-	$('body').on('click', '.popup_button', function(){
-		$('.new_memorial_popup').slideToggle('slow');
+	// Expands the comment bar when in focus.
+	$('body').on('focus', '#comment_bar', function(){
+		$(this).css('height', '100px');
+		$(this).css('width', '400px');
+		$('.comment-submission').css('display', 'block');
 	});
 
-	$('body').on('click', '.new_memorial_button', function(e){
-		var textField = 'input[type="text"]'
-		if($(textField).val() === $(textField).attr('value')){
-			e.preventDefault();
-			var new_element = "<fieldset class='error'>Please fill in all the fields before submitting.</fieldset>"
+	//Shrinks the comment bar if no text had been entered and the user clicks away from the comment bar.
+	$('body').on('click', function(e){
+		if(($(e.target).prop('id')!=='comment_bar')&&($(e.target).prop('id')!=='comment_image')&&($(e.target).prop('id')!=='submit_comment')&&($('#comment_bar').val()==="")){
+			$('#comment_bar').css('height', '20px');
+			$('#comment_bar').css('width', '330px');
+			$('.comment-submission').css('display', 'none');
+		}
+	});
 
-			$(this).closest('form').append('<p class="popup_alert">You need to upload a file first!</p>');
-			$(".popup_alert").css('display','none');
-			$(".popup_alert").slideToggle(200);
+	$('#memorial-image').on('click', 'empty-memorial-picture', function(){
 
-			setTimeout(function(){
-				$('.popup_alert').slideToggle(200, function(){
-					$('.popup_alert').remove();
-				});
-				// $('.popup_alert').remove();
-
-			}, 3000);
-			// $('form#new_memorial').append(new_element);
-			// setInterval(function(){
-			// 	$('.awesome').remove();
-			// }, 3000);
-		};
 
 
 
 	});
+
+
+
 };
 
 

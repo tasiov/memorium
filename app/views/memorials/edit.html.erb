@@ -1,5 +1,14 @@
 <h1>Memorial#edit</h1>
 
+<%= form_for([@user, @memorial], url: user_edit_memorial_picture_path, id: 'image-form' %>
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :name %>
+  <%= f.hidden_field :description %>
+  <%= f.hidden_field :birth_date %>
+  <%= f.hidden_field :death_date %>
+  <%= f.file_field :path %>
+  <%= f.submit %>
+<% end %>
 
 
 

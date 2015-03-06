@@ -139,3 +139,20 @@ button#cancel-invite {
 	color: white;
 	vertical-align: top;
 }
+
+.memorial-picture{
+	max-width: 800px;
+	max-height: 400px;
+	left: 50%;
+	transform: translate(-50%,0%);
+	position: relative;
+	display: none;
+}
+
+.edit_memorial{
+	display: none;
+}
+
+.mempicture_upload{
+	background: radial-gradient(white,rgba(230,230,230,.6), rgba(170,170,170,.4));
+}

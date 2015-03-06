@@ -21,10 +21,10 @@ body {
 }
 
 .build_memorial_button:hover {
-  
+
   background-color: red;
   color: white;
-  padding: 5px 15px; 
+  padding: 5px 15px;
   border: 0 none;
   cursor: pointer;
   -webkit-border-radius: 5px;
@@ -45,7 +45,7 @@ body {
 }
 
 .memorial_instructions {
-  
+
   width: 80%;
   height: 100%;
   display: block;
@@ -179,7 +179,7 @@ form#new_memorial{
 }
 
 #instruct {
-  
+
   width: 500px;
   float: left;
 }
@@ -261,4 +261,23 @@ section div#box:hover{
   width: 300px;
   height: 200px;
   float: right;
+}
+
+.create-memorial-x{
+  position: absolute;
+  right: 14px;
+  top: 6px;
+  z-index: 1;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  width: 10px;
+  height: 10px;
+}
+
+.create-memorial-x:hover{
+  right: 12px;
+  top: 4px;
+  background-color: FireBrick;
+  border-radius: 50%;
+  border: 2px solid FireBrick;
 }

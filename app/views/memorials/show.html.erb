@@ -29,13 +29,25 @@
 
 	<div class="people_posts">
 			<div class="mempicture_upload">
-			<!-- (note for team: picture upload goes here - w:800px x h:400 px) -->
+				<!-- Only displays picture if there are any. -->
+				<% if @memorial.path.url != nil %>
+					<%= image_tag @memorial.path, class: 'memorial-picture' %>
+				<% else %>
+					<p>Upload a picture!</p>
+				<% end %>
+
+				<!-- The form for uploading a new memorial comment picture. -->
+				<%= form_for([@user, @memorial], url: user_edit_memorial_picture_path) do |f| %>
+				  <%= f.file_field :path, id: "memorial_image" %>
+ 					<%= f.submit "Upload", id: "submit_image" %>
+				<% end %>
 			</div>
 	<br>
 	Post comment
 	</br>
 
-	<%= form_for(@comment, remote: true, authenticity_token: true, :id => "comment_form") do |f| %>
+	<!-- Form for creating a new comment. -->
+	<%= form_for(@comment, remote: true, authenticity_token: true, id: "comment_form") do |f| %>
 		<%= f.text_area(:message, id: "comment_bar") %>
 		<%= f.hidden_field :memorial_id %>
 		<section class="comment-submission">

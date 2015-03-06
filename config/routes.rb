@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
     get 'memorials/:id/edit', to: 'memorials#edit', as: :edit_memorial
 
+    put 'memorials/:id', to: 'memorials#edit_picture', as: :edit_memorial_picture
+
     get 'memorials/:id', to: 'memorials#show', as: :memorial
     patch 'memorials/:id', to: 'memorials#update'
     put 'memorials/:id', to: 'memorials#update'

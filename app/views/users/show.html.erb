@@ -1,16 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <div class="user_info">
-  <div class="user_profile_pic">
-  <%= image_tag @user.path%>
-  </div>
-
+<!--   <% if(@user.path.url != nil) %>
+    <div class="user_profile_pic">
+      <%= image_tag @user.path%>
+    </div>
+  <% end %> -->
 <p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
+  <strong>Welcome</strong>
+  <%= @user.first_name %>!
 </p>
 
-<p>
+<!-- <p>
   <strong>Last name:</strong>
   <%= @user.last_name %>
 </p>
@@ -18,7 +19,7 @@
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
-</p>
+</p> -->
 <!-- <div ><%= link_to 'Edit User', edit_user_path(@user.id) %></div>
 </div> -->
 
@@ -30,9 +31,18 @@
 <div class="memorial_instructions">
   <h3> Create a Memorial in a few easy steps. </h3>
   <div id="instruct">
-  Click the button and fill out some basic information.
-  Start uploading photos and inviting friends and family to view or collaborate.
+  1. Click the 'Create Memorial' button and enter the person's information. <br>
+  <br>
+  2. This will take you to the Memorial page where you can upload pictures and invite friends and family to visit. <br>
+  <br>
+  3. Then go to the Timeline page and upload your memories to be saved in chronological order.
+  <br>
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
 
   <button class="popup_button">Create Memorial</button>
 
@@ -85,29 +95,25 @@
 
 
 <section class="memorials_invited">
-<h3> Memorials to view</h3>
+  <h3> Memorials to view</h3>
+    <% if(@user.memorials.first == nil) %>
+      <div class="box placeholder-box"></div>
+    <% end %>
 
-  <div class="placeholder_boxes">
-    <div class="memorial_placeholder">
+  <% @user.memorials.each do |memorial| %>
+    <div class="box content-box" style= "background-image: url('<%= memorial.path %>'); background-size: 100% 100%;">
+      <div id="boxlink"><%= link_to "#{memorial.title}", user_memorial_path(@user.id, memorial.id) %></div>
+      <br>
+      <%= memorial.name %>
+
+      </br><br>
+      <%= @user.memorial_users.find_by_memorial_id(memorial.id).role %>
+
+      </br>
     </div>
-
-    <div class="memorial_placeholder2">
-    </div>
-  </div>
-
-<% @user.memorials.each do |memorial| %>
-  <div id="box">
-    <div id="boxlink"><%= link_to "#{memorial.title}", user_memorial_path(@user.id, memorial.id) %></div>
-    <br>
-    <%= memorial.name %>
-
-    </br><br>
-    <%= @user.memorial_users.find_by_memorial_id(memorial.id).role %>
-
-    </br>
-  </div>
-
   <% end %>
+
+      <div class="box placeholder-box"></div>
 </section>
 
 

@@ -2,6 +2,8 @@
   border: 1px solid #000;
   height: 180px;
   width: 150px;
+  background-color: black;
+  color: black;
   box-shadow: 0px 1px 42px 0px  #F5F5F5;
   padding: 10px;
   text-align: center;
@@ -19,7 +21,8 @@
 
 .comment_bubble:hover{
 
-  background-color: #FFFFC2;
+  background-color: white;
+  color: black;
   /*margin-top: -1px;*/
   -ms-transform: translate(0, -5px); /* IE 9 */
   -webkit-transform: translate(0, -5px); /* Chrome, Safari, Opera */
@@ -65,6 +68,7 @@
 }
 
 #comment_image{
+  
 }
 
 .comment-picture{

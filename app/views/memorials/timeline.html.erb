@@ -1,5 +1,5 @@
 <br>
-<button class="timeline-button">Add media</button>
+<button class="timeline-button">Add photos</button>
 <!-- <h3>Timeline</h3> -->
 <br>
 <%= form_for @picture, url: user_memorial_timeline_path, :html => {:multipart =>true} do |f| %>
@@ -36,7 +36,7 @@
   		<%= f.hidden_field :page, value: "timeline"%>
   	</div>
   	<div>
-  		<%= f.submit %>
+  		<%= f.submit nil, class: "timeline-image-submit" %>
   	</div>
   </section>
 <% end %>

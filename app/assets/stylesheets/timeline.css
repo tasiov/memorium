@@ -5,6 +5,9 @@
   top: 120px;
   height: 25px;
   width: 110px;
+  color: white;
+  background-color: black;
+  border: none;
 }
 
 /*Styling for the add media popup*/
@@ -160,8 +163,8 @@
   width: 30%;
   height: 100%;
   position: absolute;
-  z-index: -1;
-  border: solid gray 2px;
+  /*z-index: -1;*/
+  /*border: solid gray 2px;*/
   padding: 10px;
   margin-left: 10px;
 
@@ -191,5 +194,6 @@
   display: block;
   text-align: center;
 }
+
 
 

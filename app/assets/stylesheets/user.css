@@ -3,7 +3,6 @@ body {
 }
 
 .user_profile_pic img {
-
 	width: 100px;
 	float: left;
 	margin-right: 20px;
@@ -16,21 +15,21 @@ body {
 .button {
   height: 30px;
   width: 100px;
-  color: black;
+  color: white;
   font-family: 'Open Sans', sans-serif;
   font-size: 10px;
-  background: white;
+  background: black;
   border: none;
   text-decoration: none;
   display: block;
   padding: 5px;
-  margin-left: 20px;
   position: absolute;
 }
 
 .button:hover {
-  background: black;
-  color: white;
+  background: white;
+  color: black;
+  border: solid 2px black;
 }
 
 /* create memorial button */
@@ -58,11 +57,11 @@ body {
 
 .user_info {
   background-color: white;
-  width: 90%;
+  width: 13%;
   height: 100%;
   display: block;
   margin: 20px 20px 0px 20px;
-  padding: 10px 10px 40px 0px;
+  padding: 10px 10px 40px 20px;
   color: black;
   font-weight: 100;
 }
@@ -209,28 +208,24 @@ form#new_memorial{
   float: left;
 }
 
+/*<<<<<<< HEAD*/
 
-section div#box{
+/*section div#box{
   border: 1px solid #000;
   height: 200px;
   width: 300px;
-  /*box-shadow: 0px 1px 42px 0px #F5F5F5;*/
   padding: 20px;
   text-align: center;
-  /*box-sizing: border-box;*/
   margin: 10px;
-  /*transition: 1s all;*/
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-/*  margin-left: auto;
-  margin-right: auto;*/
   background: white;
 
 }
 
 section div#box:hover{
 
-  background-color: #F0F0F0;
+  background-color: #F0F0F0;*/
   /*margin-top: -5px;*/
 /*  -ms-transform: translate(0, -5px); /* IE 9 */
  /* -webkit-transform: translate(0, -5px); /* Chrome, Safari, Opera */
@@ -239,9 +234,27 @@ section div#box:hover{
 
 
 
-.memorials_invited {
+/*.memorials_invited {
 
+  width: 90%;*/
+/*=======*/
+.button {
+  height: 30px;
+  width: 100px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  background: #0071BC;
+  border: none;
+  text-decoration: none;
+  display: block;
+  padding: 5px;
+  margin-left: 20px;
+}
+
+.memorials_invited {
   width: 90%;
+/*>>>>>>> 30490f6bd9a66cfa1be3a36bca6df6f370924950*/
   height: 100%;
   /*display: block;*/
   margin: 20px 20px 0px 20px;
@@ -250,14 +263,20 @@ section div#box:hover{
   background: black;
 }
 
+/*<<<<<<< HEAD*/
 
 
-#box #boxlink a {
+/*#box #boxlink a {*/
+/*=======*/
+#boxlink a {
+/*>>>>>>> 30490f6bd9a66cfa1be3a36bca6df6f370924950*/
   text-decoration: none;
-  color: black;
+  color: white;
+  font-size: 40px;
 }
 
-.placeholder_boxes {
+
+/*.placeholder_boxes {
   padding: 10px 80px 20px 20px;
 }
 .memorial_placeholder {
@@ -273,7 +292,49 @@ section div#box:hover{
   border: dashed white;
   width: 300px;
   height: 200px;
-  float: right;
+  float: right;*/
+
+
+.box{
+  display: inline-block;
+  width: 500px;
+  height: 250px;
+  text-align: center;
+  vertical-align: top;
+  margin: 5px 5px 0px 0px;
+}
+
+.box:hover{
+  background-color: #F0F0F0;
+  /*margin-top: -5px;*/
+  /*-ms-transform: translate(0, -5px); /* IE 9 */
+  /*-webkit-transform: translate(0, -5px); /* Chrome, Safari, Opera */
+  /*transform: translate(0,-5px);*/
+}
+
+.placeholder-box{
+  border: white dashed 2px;
+  width: 500px;
+  margin-left: 50px;
+  height: 250px;
+}
+
+.content-box{
+  width: 500px;
+  border: 1px solid #000;
+  /*box-shadow: 0px 1px 42px 0px #F5F5F5;*/
+  /*box-sizing: border-box;*/
+  /*transition: 1s all;*/
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  margin-left: 50px;
+  padding-top: 30px;
+  color: white;
+}
+
+.content-box:hover {
+  background-color: #F0F0F0;
+  opacity: .7;
 
 }
 

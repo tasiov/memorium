@@ -37,6 +37,20 @@ nav {
 
 }
 
+.navbar-avatar{
+  width: 70px;
+  height: 74px;
+  margin: -27px 20px 0px 20px;
+  float: left;
+  overflow: hidden;
+}
+.navbar-avatar img{
+  width: 70px;
+  min-height: 74px;
+  height: auto;
+  border-radius: 5% 5% 0% 0%;
+}
+
 .notif {
   position: absolute;
   right: 200px;

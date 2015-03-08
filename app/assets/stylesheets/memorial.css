@@ -80,6 +80,7 @@
 	padding: 5px;
 	margin: 5px;
 	float: left;
+	font-family: 'Droid', sans-serif;
 }
 
 #btn1:hover{
@@ -92,6 +93,7 @@
 	padding: 5px;
 	margin-left: 5px;
 	float: left;
+	font-family: 'Droid', sans-serif;
 }
 
 #btn2:hover {
@@ -100,8 +102,9 @@
 }
 
 button#cancel-invite {
-  background-color: gray;
+  background-color: white;
   position: absolute;
+  border: none;
 
 }
 
@@ -127,13 +130,13 @@ button#cancel-invite {
 }
 
 .user_name {
-	color: black;
+	color: gray;
 	font-weight: bold;
 	font-size: 10px
 }
 
 .user_msg {
-	color: black;
+	color: gray;
 	font-family: 'Droid', sans-serif;
 }
 
@@ -144,7 +147,7 @@ button#cancel-invite {
 .search_button {
 	width: 80px;
 	height: 25px;
-	background: #0071BC;
+	background: black;
 	border: none;
 	color: white;
 	vertical-align: top;
@@ -153,7 +156,7 @@ button#cancel-invite {
 .enter_button {
 	width: 80px;
 	height: 25px;
-	background: #0071BC;
+	background: black;
 	border: none;
 	color: white;
 	vertical-align: top;
@@ -162,14 +165,23 @@ button#cancel-invite {
 .memorial-picture{
 	max-width: 800px;
 	max-height: 400px;
-	left: 50%;
-	transform: translate(-50%,0%);
+	/*left: 500px;*/
+	/*transform: translate(-50%,0%);*/
 	position: relative;
-	display: none;
+	/*display: none;*/
 }
 
 .edit_memorial{
-	/*display: none;*/
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%,0%);
+	border: 1px solid black;
+	background-color: CornFlowerBlue;
+	background-clip: content-box;
+	opacity: .9;
+  /*clip: rect(0px, 500px, 273px, 30px);*/
 }
 
 .mempicture_upload{
@@ -184,7 +196,7 @@ button#cancel-invite {
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
-	background-color: rgba(240,240,240,.2);
+	background-color: rgba(240,240,240,1);
 }
 /*
 #memorial_image{

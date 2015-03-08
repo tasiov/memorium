@@ -32,6 +32,7 @@
 				<!-- Only displays picture if there are any. -->
 				<% if @memorial.path.url != nil %>
 					<%= image_tag @memorial.path, class: 'memorial-picture' %>
+					<button class="crop">Crop your picture!</button>
 				<% else %>
 					<button class="empty-memorial-picture">Upload a picture!</button>
 				<% end %>

@@ -15,7 +15,7 @@
   width: 270px;
   top: 6%;
   right: 2%;
-  background-color: CornFlowerBlue;
+  background-color: white;
   border: 3px solid rgba(30,30,30,1);
   z-index: 1;
 }
@@ -35,9 +35,9 @@
 .popup-x:hover{
   right: 2px;
   top: 2px;
-  background-color: FireBrick;
+  background-color: gray;
   border-radius: 50%;
-  border: 2px solid FireBrick;
+  border: 2px solid gray;
 }
 
 /*Timeline picture delete button styling*/
@@ -53,9 +53,9 @@
 .timeline-x:hover{
   right: 2px;
   top: 13px;
-  background-color: FireBrick;
+  background-color: gray;
   border-radius: 50%;
-  border: 2px solid FireBrick;
+  border: 2px solid gray;
 }
 
 /*Affects each timeline image.*/
@@ -68,7 +68,7 @@
   width: auto;
   max-width: 700px;
   max-height: 400px;
-  box-shadow: 0px 0px 7px 4px rgb(30,30,30);
+  box-shadow: 0px 0px 7px 0px rgb(30,30,30);
   margin-bottom: 10px;
   margin-top: 10px;
 }
@@ -85,6 +85,14 @@
   top: 150px;
 }*/
 
+/*contains both text and img */
+.img-text-box {
+  
+  border: 2px gray solid;
+
+}
+
+
 /*The wrapper containing a single image.*/
 .img-container{
   position: relative;
@@ -97,11 +105,11 @@
   position: absolute;
   width: 45%;
   height: 8px;
-  background: FireBrick;
+  background: black;
   z-index:-2;
   left: 15%;
   top: 50%;
-  box-shadow: 0px 0px 2px 3px black;
+  box-shadow: 0px 0px 1px 1px gray;
 }
 
 /*The vertical timeline line.*/
@@ -111,22 +119,22 @@
   left: 14.8%;
   height: 85%;
   width: 0px;
-  background: FireBrick;
+  background: black;
   z-index:-1;
   overflow: hidden;
-  box-shadow: 0px 0px 2px 3px black;
+  box-shadow: 0px 0px 1px 1px gray;
 }
 
 /*The dot at the very top of the timeline.*/
 .timeline-top{
-  position: absolute;
+/*  position: absolute;
   width: 60px;
-  height: 60px;
+  height: 60px;*/
   /*border: 6px solid rgb(15,15,15);*/
   /*box-shadow: 0px 0px 100px 3px rgb(90,90,90);*/
   /*border-radius: 50%;*/
-  left: 12.9%;
-  top: 8%;
+/*  left: 12.9%;*/
+  /*top: 8%;*/
 }
 
 /*The dots associated with each timeline entry.*/
@@ -134,6 +142,8 @@
   position: absolute;
   bottom: 41%;
   left: 12.9%;
+  width: 60px;
+  height: 60px;
 }
 
 .timeline-entry{
@@ -142,6 +152,7 @@
   padding: 0px;
   position: relative;
   text-align: center;
+  height: 100%;
 }
 
 .text-container{
@@ -149,22 +160,27 @@
   width: 30%;
   height: 100%;
   position: absolute;
+  z-index: -1;
+  border: solid gray 2px;
+  padding: 10px;
+  margin-left: 10px;
 
 }
 
 .date{
   position: absolute;
-  left: 0%;
+  left: 2%;
   bottom: 46%;
+  color: gray;
+
 }
 
 .caption{
   /*position: absolute;*/
   /*bottom: 70%;*/
   display: block;
-  margin-top: 120px;
+  margin-top: 20px;
   text-align: center;
-  text-decoration: underline;
 }
 
 .description{
@@ -175,6 +191,5 @@
   display: block;
   text-align: center;
 }
-
 
 

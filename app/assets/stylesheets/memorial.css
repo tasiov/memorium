@@ -50,9 +50,11 @@
  background-color: white;
  width: 235px;
  height: 55px;
- padding: 10px;
+ padding: 5px;
  margin-right: 120px;
  box-shadow: 3px 3px 7px #999;
+ display: none;
+
 
 }
 
@@ -62,7 +64,7 @@
 	padding: 10px;
 	font-size: 10px;
 	box-shadow: 3px 3px 7px #999;
-  z-index: 2;
+  z-index: 1;
 
 }
 
@@ -77,6 +79,7 @@
 	width: 200px;
 	padding: 5px;
 	margin: 5px;
+	float: left;
 }
 
 #btn1:hover{
@@ -85,19 +88,20 @@
 }
 
 #btn2 {
-	border: solid 1px black;
+	/*border: solid 1px black;*/
 	padding: 5px;
 	margin-left: 5px;
+	float: left;
 }
 
-#btn2:hover{
-	background-color: white;
-	border: solid black 1px;
+#btn2:hover {
+	background-color: gray;
+	color: white;
 }
 
 button#cancel-invite {
   background-color: gray;
-  border: solid black 2px;
+  position: absolute;
 
 }
 
@@ -113,9 +117,10 @@ button#cancel-invite {
 
 .people_posts {
 
-	height: 100%;
+	/*height: 100%;*/
 	background-color: white;
 	padding: 10px;
+	height: 1000px;
 }
 
 #timeline_link {
@@ -129,6 +134,7 @@ button#cancel-invite {
 
 .user_msg {
 	color: black;
+	font-family: 'Droid', sans-serif;
 }
 
 #timeline_link {

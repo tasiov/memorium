@@ -1,7 +1,7 @@
 .comment_bubble{
   border: 1px solid #000;
-  height: 80px;
-  width: 250px;
+  height: 180px;
+  width: 150px;
   box-shadow: 0px 1px 42px 0px  #F5F5F5;
   padding: 10px;
   text-align: center;
@@ -19,7 +19,7 @@
 
 .comment_bubble:hover{
 
-  background-color: #F0F0F0;
+  background-color: #FFFFC2;
   /*margin-top: -1px;*/
   -ms-transform: translate(0, -5px); /* IE 9 */
   -webkit-transform: translate(0, -5px); /* Chrome, Safari, Opera */

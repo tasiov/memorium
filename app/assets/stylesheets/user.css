@@ -9,8 +9,31 @@ body {
 	margin-right: 20px;
   margin-top: 20px;
   margin-left: 20px;
+  margin-bottom: 20px;
 }
 
+/* edit profile button */
+.button {
+  height: 30px;
+  width: 100px;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  background: white;
+  border: none;
+  text-decoration: none;
+  display: block;
+  padding: 5px;
+  margin-left: 20px;
+  position: absolute;
+}
+
+.button:hover {
+  background: black;
+  color: white;
+}
+
+/* create memorial button */
 .build_memorial_button {
 
 	width: 150px;
@@ -35,13 +58,13 @@ body {
 
 .user_info {
   background-color: white;
-  width: 80%;
+  width: 90%;
   height: 100%;
   display: block;
   margin: 20px 20px 0px 20px;
-  padding: 10px;
-  opacity: 1;
-
+  padding: 10px 10px 40px 0px;
+  color: black;
+  font-weight: 100;
 }
 
 .memorial_instructions {
@@ -120,6 +143,7 @@ form#new_memorial{
   margin-top: 10px;
   margin-bottom: 7px;
   width: 20%;
+
 }
 
 .middle_div{
@@ -141,10 +165,11 @@ form#new_memorial{
 
 .text_area_description{
   width: 100%;
-  height: 100px;
+  height: 80px;
   top: 20px;
   position: relative;
   resize: none;
+  border-color: gray;
 }
 
 .bottom_field{
@@ -168,7 +193,7 @@ form#new_memorial{
   color: white;
   border: none;
   height: 25px;
-  width: 180px;
+  width: 100px;
 }
 
 .popup_alert{
@@ -199,6 +224,7 @@ section div#box{
   font-size: 14px;
 /*  margin-left: auto;
   margin-right: auto;*/
+  background: white;
 
 }
 
@@ -211,33 +237,19 @@ section div#box:hover{
   /*transform: translate(0,-5px);*/
 }
 
-.button {
-  height: 30px;
-  width: 100px;
-  color: white;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 10px;
-  background: #0071BC;
-  border: none;
-  text-decoration: none;
-  display: block;
-  padding: 5px;
-  margin-left: 20px;
-}
-
 
 
 .memorials_invited {
 
-  width: 80%;
+  width: 90%;
   height: 100%;
   /*display: block;*/
-  margin: 5px 20px 20px 20px;
-  padding: 10px 10px 20px 10px;
-  opacity: 1;
-  position: relative;
-  background: white;
+  margin: 20px 20px 0px 20px;
+  padding: 10px 10px 40px 0px;
+  /*position: relative;*/
+  background: black;
 }
+
 
 
 #box #boxlink a {
@@ -249,18 +261,20 @@ section div#box:hover{
   padding: 10px 80px 20px 20px;
 }
 .memorial_placeholder {
-  border: dashed;
+  border: dashed white;
   width: 300px;
   height: 200px;
   float: left;
   text-align: center;
+  margin-left: 50px;
 }
 
 .memorial_placeholder2 {
-  border: dashed;
+  border: dashed white;
   width: 300px;
   height: 200px;
   float: right;
+
 }
 
 .create-memorial-x{

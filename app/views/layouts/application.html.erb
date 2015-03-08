@@ -16,10 +16,16 @@
     <div class="notif">
       <span id="notif-title">Notifications <%= User.num_notif(@current_user) %></span>
       <div class="notif-dropdown">
-        <% User.get_recent(@current_user).each do |notification| %>
-        <div class="notif-links">
-          <%= link_to truncate(notification.message, length: 50), notif_change_status_path(notification.id), "status" => notification.status %>
-        </div>
+        <% if User.get_recent(@current_user).any? %>
+          <% User.get_recent(@current_user).each do |notification| %>
+          <div class="notif-links">
+            <%= link_to truncate(notification.message, length: 50), notif_change_status_path(notification.id), "status" => notification.status %>
+          </div>
+          <% end %>
+        <% else %>
+          <div class="no-links">
+            You have 0 notifications
+          </div>
         <% end %>
       </div>
     </div>

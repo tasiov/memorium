@@ -18,13 +18,32 @@ var memorial_script = function(){
 
 	$('#memorial-image').on('click', 'empty-memorial-picture', function(){
 
+	});
 
+	//The beginnings of integrating Jcrop
+	$('.crop').on('mousedown', function(e){
+		e.preventDefault();
 
+		var target = '.memorial-picture';
+		if($(target).data('Jcrop')){
+			$(target).data('Jcrop').destroy();
+			console.log("destroy");
+		}
+		else{
+			$(target).Jcrop();
+			console.log("create");
+		}
 
 	});
 
+	//Memorial picture upload stuff
+	$('body').on('mouseenter','.mempicture_upload', function(){
+		$('.edit_memorial').slideToggle();
+	});
 
-
+	$('body').on('mouseleave','.mempicture_upload', function(){
+		$('.edit_memorial').slideToggle();
+	});
 };
 
 

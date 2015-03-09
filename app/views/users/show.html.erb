@@ -1,15 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<div class="user_info">
+<!-- <div class="user_info"> -->
 <!--   <% if(@user.path.url != nil) %>
     <div class="user_profile_pic">
       <%= image_tag @user.path%>
     </div>
   <% end %> -->
-<p>
-  <strong>Welcome</strong>
-  <%= @user.first_name %>!
-</p>
+<!-- <p id="bigwelcome"> -->
+  <!-- Welcome <%= @user.first_name %>! -->
+<!-- </p> -->
 
 <!-- <p>
   <strong>Last name:</strong>
@@ -23,7 +22,7 @@
 <!-- <div ><%= link_to 'Edit User', edit_user_path(@user.id) %></div>
 </div> -->
 
-<%= button_to "Edit Profile", edit_user_path(@user.id), :class => "button", :method => :get  %><br />
+<%#= button_to "Edit Profile", edit_user_path(@user.id), :class => "button", :method => :get  %><br />
 
 </div>
 <br>
@@ -95,7 +94,7 @@
 
 
 <section class="memorials_invited">
-  <h3> Memorials to view</h3>
+  <p id="titlememorial"> Memorials to view </p>
     <% if(@user.memorials.first == nil) %>
       <div class="box placeholder-box"></div>
     <% end %>
@@ -104,10 +103,10 @@
     <div class="box content-box" style= "background-image: url('<%= memorial.path %>'); background-size: 100% 100%;">
       <div id="boxlink"><%= link_to "#{memorial.title}", user_memorial_path(@user.id, memorial.id) %></div>
       <br>
-      <%= memorial.name %>
+      <%#= memorial.name %>
 
       </br><br>
-      <%= @user.memorial_users.find_by_memorial_id(memorial.id).role %>
+      <%#= @user.memorial_users.find_by_memorial_id(memorial.id).role %>
 
       </br>
     </div>

@@ -1,5 +1,6 @@
 body {
-  background-image: url('gray_jean.png');
+  /*background-image: url('gray_jean.png');*/
+  color: gray;
 }
 
 .user_profile_pic img {
@@ -56,14 +57,19 @@ body {
 }
 
 .user_info {
-  background-color: white;
-  width: 13%;
+ /* background-color: white;*/
+  width: 50%;
   height: 100%;
   display: block;
   margin: 20px 20px 0px 20px;
   padding: 10px 10px 40px 20px;
   color: black;
   font-weight: 100;
+}
+
+p#bigwelcome {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
 }
 
 .memorial_instructions {
@@ -260,7 +266,14 @@ section div#box:hover{
   margin: 20px 20px 0px 20px;
   padding: 10px 10px 40px 0px;
   /*position: relative;*/
-  background: black;
+  /*background: black;*/
+}
+
+p#titlememorial {
+  margin-left: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  /*color: black;*/
 }
 
 /*<<<<<<< HEAD*/
@@ -272,6 +285,7 @@ section div#box:hover{
 /*>>>>>>> 30490f6bd9a66cfa1be3a36bca6df6f370924950*/
   text-decoration: none;
   color: white;
+  background-color: rgba(0, 0, 0, 0.2);
   font-size: 40px;
 }
 
@@ -315,8 +329,9 @@ section div#box:hover{
 .placeholder-box{
   border: white dashed 2px;
   width: 500px;
-  margin-left: 50px;
+  margin-left: 20%;
   height: 250px;
+  margin-top: 30px;
 }
 
 .content-box{
@@ -327,14 +342,26 @@ section div#box:hover{
   /*transition: 1s all;*/
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  margin-left: 50px;
+  margin-left: 20%;
   padding-top: 30px;
   color: white;
+
+
+
 }
+
 
 .content-box:hover {
   background-color: #F0F0F0;
   opacity: .7;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: url(grayscale.svg); /* Firefox 4+ */
+  filter: gray; /* IE 6-9 */;
+
 
 }
 

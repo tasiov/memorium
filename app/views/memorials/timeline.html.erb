@@ -2,6 +2,8 @@
 <button class="timeline-button">Add photos</button>
 <!-- <h3>Timeline</h3> -->
 <br>
+<br>
+<br>
 <%= form_for @picture, url: user_memorial_timeline_path, :html => {:multipart =>true} do |f| %>
   <% if @picture.errors.any? %>
     <div id="error_explanation">

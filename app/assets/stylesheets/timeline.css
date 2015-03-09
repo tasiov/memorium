@@ -121,11 +121,13 @@
   top: 190px;
   left: 14.8%;
   height: 85%;
-  width: 0px;
+  width: 0%;
   background: black;
   z-index:-1;
   overflow: hidden;
   box-shadow: 0px 0px 1px 1px gray;
+  padding-left: 1px;
+  padding-top: 1px;
 }
 
 /*The dot at the very top of the timeline.*/
@@ -145,8 +147,8 @@
   position: absolute;
   bottom: 41%;
   left: 12.9%;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
 }
 
 .timeline-entry{
@@ -193,6 +195,7 @@
   margin-top: 20px;
   display: block;
   text-align: center;
+  font-family: 'Droid', sans-serif;
 }
 
 

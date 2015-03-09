@@ -28,11 +28,15 @@
 	<br>
 
 	<div class="people_posts">
-			<div class="mempicture_upload">
+			<div class="mempicture_upload jwc_frame">
 				<!-- Only displays picture if there are any. -->
 				<% if @memorial.path.url != nil %>
-					<%= image_tag @memorial.path, class: 'memorial-picture' %>
-					<button class="crop">Crop your picture!</button>
+					<%# if @memorial.crop_top != nil %>
+						<div class= 'hidden-image-info', top= "<%= @memorial.crop_top %>", left= "<%= @memorial.crop_left %>", width= "<%= @memorial.crop_width %>" ></div>
+						<%= image_tag @memorial.path, class: 'memorial-picture' %>
+					<%# else %>
+						<%# image_tag @memorial.path, class: 'memorial-picture' %>
+					<%# end %>
 				<% else %>
 					<button class="empty-memorial-picture">Upload a picture!</button>
 				<% end %>
@@ -43,6 +47,8 @@
  					<%= f.submit "Upload", id: "submit_image" %>
 				<% end %>
 			</div>
+			<button class="crop">Crop your picture!</button>
+
 	<br>
 	Post comment
 	</br>

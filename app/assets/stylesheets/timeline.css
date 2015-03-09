@@ -111,6 +111,7 @@
   left: 14.8%;
   height: 85%;
   width: 0px;
+  padding-left: 0px;
   background: FireBrick;
   z-index:-1;
   overflow: hidden;

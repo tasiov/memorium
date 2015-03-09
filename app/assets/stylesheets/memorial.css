@@ -154,12 +154,19 @@ button#cancel-invite {
 }
 
 .memorial-picture{
-	max-width: 800px;
-	max-height: 400px;
+	/*clip:	rect(0px, 800px, 400px, 0px);*/
+	/*max-width: 800px;*/
+	/*max-height: 400px;*/
 	/*left: 500px;*/
 	/*transform: translate(-50%,0%);*/
-	position: relative;
+	position: absolute;
 	/*display: none;*/
+}
+
+.crop{
+	position: relative;
+	left: 42%;
+	transform: translate(-50%,0%);
 }
 
 .edit_memorial{
@@ -178,6 +185,7 @@ button#cancel-invite {
 .mempicture_upload{
 	background: radial-gradient(white,rgba(240,240,240,.6), rgba(190,190,190,.4));
 	position: relative;
+	overflow: hidden;
 }
 
 .empty-memorial-picture{
@@ -189,16 +197,7 @@ button#cancel-invite {
 	transform: translate(-50%,-50%);
 	background-color: rgba(240,240,240,1);
 }
-/*
-#memorial_image{
-	height: 48px;
-	width: 288px;
-	background: transparent;
-	font-size: 36px;
-	border: none;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
+
+.hidden-image-info{
+	display: none;
 }
-*/

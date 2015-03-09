@@ -9,15 +9,20 @@
 </head>
 
 <nav>
-  <% if(@user != nil) %>
-    <% if(@user.path.url != nil) %>
-      <div class="navbar-avatar">
-        <%= image_tag @user.path%>
-      </div>
-    <% end %>
-  <% end %>
 
-  <p class="site-name">Memorium</p>
+  <%= image_tag "black_logo.png", class: "logo-nav" %>
+  <p class="site-name"></p>
+
+  
+  <%# if(@user != nil) %>
+    <%# if(@user.path.url != nil) %>
+      <!-- <div class="navbar-avatar"> -->
+        <%#= image_tag @user.path%>
+      <!-- </div> -->
+    <%# end %>
+  <%# end %>
+
+  
 
 
   <% if @current_user != nil %>

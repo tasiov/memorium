@@ -54,7 +54,7 @@ class MemorialsController < ApplicationController
     respond_to do |format|
       if @memorial.update(memorial_params)
         format.html { redirect_to user_memorial_path, notice: 'Memorial was successfully updated.' }
-        format.json { render :show, status: :ok, location: @memorial }
+        format.json { render json: @memorial}
       end
     end
   end
@@ -115,7 +115,7 @@ class MemorialsController < ApplicationController
 
   	# Never trust parameters from the scary internet, only allow the white list through.
   	def memorial_params
-    	params.require(:memorial).permit(:title, :name, :description, :birth_date, :death_date, :path)
+    	params.require(:memorial).permit(:title, :name, :description, :birth_date, :death_date, :path, :crop_top, :crop_left, :crop_width)
   	end
 
     def picture_params

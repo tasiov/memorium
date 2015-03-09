@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306002950) do
+ActiveRecord::Schema.define(version: 20150308202846) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "message"
@@ -45,6 +45,9 @@ ActiveRecord::Schema.define(version: 20150306002950) do
     t.date     "birth_date"
     t.date     "death_date"
     t.string   "path"
+    t.string   "crop_top"
+    t.string   "crop_left"
+    t.string   "crop_width"
   end
 
   create_table "notifications", force: :cascade do |t|

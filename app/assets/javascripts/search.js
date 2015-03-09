@@ -86,7 +86,7 @@ function onRequestUserSuccess(response) {
 		var buttons = $('.invites');
 		buttons.append('<span class="invite-button" id="btn1" privilege="contributor">Invite ' + userName + ' to contribute</span>',
 			             '<span class="invite-button" id="btn2" privilege="viewer">Invite ' + userName + ' to view</span>',
-			             '<button id="cancel-invite">x</button>');
+			             '<span><button id="cancel-invite">x</button></span>');
 		buttons.show();
 		dropdown.hide();
 	});
@@ -94,7 +94,7 @@ function onRequestUserSuccess(response) {
   // cancel button reverts to search bar
   $('body').on("click", ".invites #cancel-invite", function(event) {
   	event.preventDefault();
-  	var buttons = $(this).parent();
+  	var buttons = $(this).parent().parent();
   	revertToSearch(buttons);
   });
 

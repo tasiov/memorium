@@ -1,0 +1,77 @@
+<br>
+<button class="timeline-button">Add photos</button>
+<!-- <h3>Timeline</h3> -->
+<br>
+<br>
+<br>
+<%= form_for @picture, url: user_memorial_timeline_path, :html => {:multipart =>true} do |f| %>
+  <% if @picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+      <ul>
+      <% @picture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+	<% end %>
+
+  <section class="timeline-image-add">
+    <img class="popup-x" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Grey_close_x.svg/1024px-Grey_close_x.svg.png"/>
+  	<div>
+  		<%= f.label :caption %><br>
+  		<%= f.text_field :caption, placeholder: "Caption" %>
+  	</div>
+  	<div>
+  		<%= f.label :description %><br>
+  		<%= f.text_field :description, placeholder: "Description" %>
+  	</div>
+  	<div>
+  		<%= f.label :date %><br>
+  		<%= f.date_field :date, placeholder: "Date", class: 'date_field' %>
+  	</div>
+  	<div>
+  		<%= f.file_field :path %>
+  		<%= f.hidden_field :path_cache %>
+  	</div>
+  	<div>
+  		<%= f.hidden_field :page, value: "timeline"%>
+  	</div>
+  	<div>
+  		<%= f.submit nil, class: "timeline-image-submit" %>
+  	</div>
+  </section>
+<% end %>
+
+
+<!-- <%= image_tag "circle.png", class: "timeline-top" %> -->
+
+<!-- The vertical timeline line. -->
+<section class="timeline-line"></section>
+
+
+<% @pictures.date_sort.each do |picture| %>
+  <section class="timeline-entry">
+    <!-- The "dot" on the timeline. -->
+    <%= image_tag "camera.png", class: "timeline-dot" %>
+  
+  <!-- container that holds img and text !-->
+    <div class="super-container">
+        <!-- A container for a single image and its destroy button. -->
+        <div class="img-container">
+          <%= link_to image_tag("x.png", class: 'timeline-x'), user_memorial_timeline_path(id: picture.id), method: 'delete'%>
+          <%= image_tag picture.path, class: 'timeline-image'%>
+        </div>
+
+        <div class="text-container">
+
+        <!-- The picture text-information labels. -->
+        <%= label_tag picture.date, nil, class: 'timeline date' %>
+        <%= label_tag picture.caption, nil, class: 'timeline caption' %>
+        <%= label_tag picture.description, nil, class: 'timeline description' %>
+      </div>
+  </div>
+  </section>
+<% end %>
+
+<div class="timeline.bottom"></div>

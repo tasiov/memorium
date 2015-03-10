@@ -82,9 +82,9 @@
   margin':0 auto;
   height:350px;
   /*opacity: 1;*/
-  position: absolute;
+  position: fixed;
   z-index: 10;
   left: 50%;
-  transform: translate(-50%, 0%);
-  top: 66%;
+  transform: translate(-50%, -50%);
+  top: 50%;
 }

@@ -20,6 +20,7 @@ var memorial_ready = function() {
 	$('body').on("click", ".dark", function(event) {
 		$('#large-picture').remove();
 		$(this).remove();
+		$('body').css('overflow','scroll');
 	});
 
 };

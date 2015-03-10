@@ -18,8 +18,8 @@
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
-</p> -->
-<!-- <div ><%= link_to 'Edit User', edit_user_path(@user.id) %></div>
+</p>
+<div ><%# link_to 'Edit User', edit_user_path(@user.id) %></div>
 </div> -->
 
 <%#= button_to "Edit Profile", edit_user_path(@user.id), :class => "button", :method => :get  %><br />
@@ -101,7 +101,9 @@
 
   <% @user.memorials.each do |memorial| %>
     <div class="box content-box" style= "background-image: url('<%= memorial.path %>'); background-size: 100% 100%;">
-      <div id="boxlink"><%= link_to "#{memorial.title}", user_memorial_path(@user.id, memorial.id) %></div>
+      <div id="boxlink">
+        <%= link_to "#{memorial.title}", user_memorial_path(@user.id, memorial.id) %>
+      </div>
       <br>
       <%#= memorial.name %>
 

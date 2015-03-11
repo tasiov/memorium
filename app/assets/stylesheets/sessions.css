@@ -1,5 +1,7 @@
-body {
+.body_back {
 	background-image: url('forrest.jpeg');
-
+	height: 100%;
+	width: 100%;
+	position: absolute;
 }
 

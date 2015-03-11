@@ -220,36 +220,6 @@ form#new_memorial{
   float: left;
 }
 
-/*<<<<<<< HEAD*/
-
-/*section div#box{
-  border: 1px solid #000;
-  height: 200px;
-  width: 300px;
-  padding: 20px;
-  text-align: center;
-  margin: 10px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  background: white;
-
-}
-
-section div#box:hover{
-
-  background-color: #F0F0F0;*/
-  /*margin-top: -5px;*/
-/*  -ms-transform: translate(0, -5px); /* IE 9 */
- /* -webkit-transform: translate(0, -5px); /* Chrome, Safari, Opera */
-  /*transform: translate(0,-5px);*/
-}
-
-
-
-/*.memorials_invited {
-
-  width: 90%;*/
-/*=======*/
 .button {
   height: 30px;
   width: 100px;
@@ -266,7 +236,6 @@ section div#box:hover{
 
 .memorials_invited {
   width: 90%;
-/*>>>>>>> 30490f6bd9a66cfa1be3a36bca6df6f370924950*/
   height: 100%;
   /*display: block;*/
   margin: 20px 0px 0px 40px;
@@ -282,13 +251,9 @@ p#titlememorial {
   color: black;
 }
 
-/*<<<<<<< HEAD*/
 
 
-/*#box #boxlink a {*/
-/*=======*/
 #boxlink a {
-/*>>>>>>> 30490f6bd9a66cfa1be3a36bca6df6f370924950*/
   text-decoration: none;
   color: white;
   background-color: rgba(0, 0, 0, 0.2);
@@ -370,8 +335,6 @@ p#titlememorial {
   filter: grayscale(100%);
   filter: url(grayscale.svg); /* Firefox 4+ */
   filter: gray; /* IE 6-9 */;
-
-
 }
 
 .create-memorial-x{

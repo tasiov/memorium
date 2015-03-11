@@ -48,7 +48,9 @@
 </div>
 
     <!-- The popup for creating a new memorial. -->
+
     <section class = "new_memorial_popup">
+    <section class="popup-wrapper">
     <%= form_for([@user, @memorial]) do |f| %>
       <fieldset class="memorial_info left_field">
       <div class="left_div">
@@ -76,7 +78,7 @@
        <%= f.text_area :description, placeholder: 'Description', class: 'text_area_description'  %>
       </fieldset>
       <%= image_tag("x.png", class: 'create-memorial-x')%>
-
+      
 
 <br>
 
@@ -87,6 +89,7 @@
         </div>
       </fieldset>
     <% end %>
+    </section>
     </section>
 
 
@@ -106,8 +109,9 @@
       <%#= memorial.name %>
 
       </br><br>
-      <%#= @user.memorial_users.find_by_memorial_id(memorial.id).role %>
-
+      <div class="role-wrapper">
+      <%= @user.memorial_users.find_by_memorial_id(memorial.id).role.capitalize %>
+      </div>
       </br>
     </div>
   <% end %>

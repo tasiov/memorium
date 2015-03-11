@@ -38,9 +38,11 @@
     </div>
   <% end %>
 
+<% if @current_user != nil %>
     <div class="nav_profile">
       <%= link_to "Profile", @user %>
     </div>
+<% end %>
 
   	<div class="nav_logout"><% if @current_user != nil %>
   		<%= link_to "Logout", logout_path %>

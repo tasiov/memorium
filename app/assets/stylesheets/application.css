@@ -186,7 +186,7 @@ h3 {
 /*Sets up the document to allow for a full page timeline line.*/
 html{
   min-height: 100%;
-  position:relative;
+  position: relative;
 }
 
 /* All body info not much yet */
@@ -194,6 +194,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	margin: 0px;
   height: 100%;
+
 }
 
 /* links */
@@ -215,10 +216,14 @@ a:hover {
 
 	/*border: solid #909090 1px;*/
 	width: 420px;
+	height: 300px;
 	padding: 10px 10px 10px 35px;
-	margin: 10px 50px 10px 0px;
+	margin: 100px 50px 10px 0px;
 	float: right;
-	background-color: #E6E6E6;
+	background-color: rgba(0,0,0,.2);
+	/*opacity: .2;*/
+	position: relative;
+	left: -11%;
 
 }
 
@@ -232,7 +237,7 @@ a:hover {
 /* login submit button */
 .submitbutton input {
   width: 100px;
-  background-color: #425068;
+  background-color: black;
   color: white;
   padding: 5px 15px;
   border: 0 none;
@@ -259,7 +264,7 @@ a:hover {
 
 .newuser {
 	/*background-color: #F0F0F0;*/
-	color: #333333;
+	color: white;
 	font-size: 14px;
 	padding: 5px 0px 45px 5px;
 	width: 450px;
@@ -270,15 +275,20 @@ a:hover {
 .announce {
 	/*border: solid #909090 1px;*/
 	width: 420px;
-	padding: 10px 10px 5px 35px;
-	margin: 10px 10px 10px 80px;
+	height: 300px;
+	padding: 10px 10px 10px 35px;
+	margin: 100px 10px 10px 100px;
 	float: left;
-	background-color: #E6E6E6;
-	opacity: 1;
+	background-color: rgba(0,0,0,.2);
+	position: relative;
+	left: 10%;
+
 }
 
+
+
 .announce ul li  {
-	color: #333333;
+	color: white;
 }
 
 

@@ -3,7 +3,7 @@
   width: 80%;
   height: 800px;
   display: block;
-  margin: 20px 20px 0px 20px;
+  margin: 20px 0px 0px 20px;
   padding: 10px;
   opacity: 1;
 }
@@ -11,8 +11,11 @@
 .title_description {
 	background-color: white;
 	height: 200px;
+	width: 100%;
 	padding: 10px;
+	margin-left: 55px;
 	position: relative;
+
 }
 
 .search-form {
@@ -124,6 +127,7 @@ button#cancel-invite {
 	background-color: white;
 	padding: 10px;
 	height: 1000px;
+	margin-left: 180px;
 }
 
 #timeline_link {
@@ -170,6 +174,9 @@ button#cancel-invite {
 	/*transform: translate(-50%,0%);*/
 	position: absolute;
 	/*display: none;*/
+	width: 900px;
+	height: 600px;
+
 }
 
 .crop{

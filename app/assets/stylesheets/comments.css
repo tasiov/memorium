@@ -46,6 +46,11 @@
 
 #comment_bar {
   width: 330px;
+  margin-left: 50px;
+}
+
+.comment_title {
+  margin-left: 50px;
 }
 
 .comment-x{

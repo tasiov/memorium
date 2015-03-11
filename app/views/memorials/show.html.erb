@@ -23,7 +23,7 @@
 			<% end %>
 		<% end %>
 
-	<span id="timeline_link"><%= link_to "Go To Board", user_memorial_timeline_path %></span>
+	<span id="timeline_link"><%= link_to "Memory Board", user_memorial_timeline_path %></span>
 	</div>
 	<br>
 
@@ -38,7 +38,7 @@
 						<%# image_tag @memorial.path, class: 'memorial-picture' %>
 					<%# end %>
 				<% else %>
-					<button class="empty-memorial-picture">Upload a picture!</button>
+					<!-- <button class="empty-memorial-picture">Upload a picture!</button> -->
 				<% end %>
 
 				<!-- The form for uploading a new memorial comment picture. -->
@@ -51,7 +51,7 @@
 
 	<br>
 	<br>
-	Post comment
+	<div class="comment_title">Post comment</div>
 	</br>
 
 	<!-- Form for creating a new comment. -->
